@@ -1,0 +1,9 @@
+{
+  "name": "spryker-sdk/manifest-test-data-provider",
+  "description": "Data provider for manifests generation and integration tests",
+  "type": "library",
+  "license": "proprietary",
+  "require": {
+    "php": ">=7.4"
+  }
+}

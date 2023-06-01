@@ -1,0 +1,23 @@
+# IDE
+.idea/
+.project/
+nbproject/
+.buildpath/
+.settings/
+*.sublime-*
+
+# OS
+.DS_Store
+*.AppleDouble
+*.AppleDB
+*.AppleDesktop
+
+# tooling
+vendor/
+!project_mock/vendor/
+composer.lock
+!project_mock/composer.lock
+.phpunit.result.cache
+
+# resources
+data/
