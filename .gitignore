@@ -18,7 +18,3 @@ vendor/
 composer.lock
 !project_mock/composer.lock
 .phpunit.result.cache
-
-# resources
-data/
-!project_mock/data/
