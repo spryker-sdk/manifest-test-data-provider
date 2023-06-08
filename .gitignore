@@ -14,7 +14,7 @@ nbproject/
 
 # tooling
 vendor/
-!project_mock/vendor/
+!project_original/vendor/
 composer.lock
-!project_mock/composer.lock
+!project_original/composer.lock
 .phpunit.result.cache
