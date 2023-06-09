@@ -24,7 +24,7 @@ class GlueApplicationDependencyProvider
     protected function getResourceRelationshipPlugins(
         ResourceRelationshipCollectionInterface $resourceRelationshipCollection
     ): ResourceRelationshipCollectionInterface {
-        $resourceRelationshipCollection->addRelationship(WireGlueRelationshipConfig::TEST_ITEMS_WIRE, new WireGlueRelationshipPlugin());
+        $resourceRelationshipCollection->addRelationship(UnwireGlueRelationshipConfig::TEST_ITEMS_UNWIRE, new UnwireGlueRelationshipPlugin());
 
         return $resourceRelationshipCollection;
     }
