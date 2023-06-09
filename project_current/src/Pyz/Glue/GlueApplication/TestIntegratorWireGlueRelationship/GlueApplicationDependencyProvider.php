@@ -9,8 +9,8 @@
 namespace Pyz\Glue\GlueApplication\TestIntegratorWireGlueRelationship;
 
 use Spryker\Glue\GlueApplication\ResourceRelationshipCollectionInterface;
-use Spryker\Glue\TestIntegratorWireGlueRelationship\Plugin\WireGlueRelationshipPlugin;
-use Spryker\Glue\TestIntegratorWireGlueRelationship\WireGlueRelationshipConfig;
+use Spryker\Glue\TestIntegratorUnwireGlueRelationship\Plugin\UnwireGlueRelationshipPlugin;
+use Spryker\Glue\TestIntegratorUnwireGlueRelationship\UnwireGlueRelationshipConfig;
 
 class GlueApplicationDependencyProvider
 {
