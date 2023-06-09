@@ -6,7 +6,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Pyz\Glue\GlueApplication;
+namespace Pyz\Glue\GlueApplication\TestIntegratorWireGlueRelationship;
 
 use Spryker\Glue\GlueApplication\ResourceRelationshipCollectionInterface;
 use Spryker\Glue\TestIntegratorWireGlueRelationship\Plugin\WireGlueRelationshipPlugin;

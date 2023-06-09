@@ -5,9 +5,8 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Pyz\Yves\ShopApplication;
+namespace Pyz\Yves\ShopApplication\TestIntegratorWireWidget;
 
-use Spryker\Yves\TestIntegratorUnwireWidget\Widget\TestUnwireWidget;
 use Spryker\Yves\TestIntegratorWireWidget\Widget\TestWidget;
 
 class ShopApplicationDependencyProvider
