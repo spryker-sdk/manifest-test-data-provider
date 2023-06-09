@@ -7,7 +7,6 @@
 
 namespace Pyz\Yves\ShopApplication\TestIntegratorUnwireWidget;
 
-use Spryker\Yves\TestIntegratorUnwireWidget\Widget\TestUnwireWidget;
 use Spryker\Yves\TestIntegratorWireWidget\Widget\TestWidget;
 
 class ShopApplicationDependencyProvider
