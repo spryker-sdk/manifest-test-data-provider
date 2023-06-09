@@ -6,13 +6,11 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Pyz\Glue\GlueApplication;
+namespace Pyz\Glue\GlueApplication\TestIntegratorWireGlueRelationship;
 
 use Spryker\Glue\GlueApplication\ResourceRelationshipCollectionInterface;
 use Spryker\Glue\TestIntegratorUnwireGlueRelationship\Plugin\UnwireGlueRelationshipPlugin;
 use Spryker\Glue\TestIntegratorUnwireGlueRelationship\UnwireGlueRelationshipConfig;
-use Spryker\Glue\TestIntegratorWireGlueRelationship\Plugin\WireGlueRelationshipPlugin;
-use Spryker\Glue\TestIntegratorWireGlueRelationship\WireGlueRelationshipConfig;
 
 class GlueApplicationDependencyProvider
 {
@@ -27,7 +25,6 @@ class GlueApplicationDependencyProvider
         ResourceRelationshipCollectionInterface $resourceRelationshipCollection
     ): ResourceRelationshipCollectionInterface {
         $resourceRelationshipCollection->addRelationship(UnwireGlueRelationshipConfig::TEST_ITEMS_UNWIRE, new UnwireGlueRelationshipPlugin());
-        $resourceRelationshipCollection->addRelationship(WireGlueRelationshipConfig::TEST_ITEMS_WIRE, new WireGlueRelationshipPlugin());
 
         return $resourceRelationshipCollection;
     }
