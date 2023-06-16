@@ -1,0 +1,268 @@
+{
+    "SprykerShop.CartPage": {
+        "configure-module": [
+            {
+                "previousValue": "",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod",
+                "value": {
+                    "value": "return array_merge(parent::isCartCartItemsViaAjaxLoadEnabled(), [APPLICATION_VENDOR_DIR . '\/spryker\/spryker\/Bundles\/*\/src\/*\/Zed\/*\/Persistence\/Propel\/Schema\/'])",
+                    "is_literal": true
+                }
+            },
+            {
+                "previousValue": "",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod2",
+                "value": {
+                    "value": "return array_merge(parent::isCartCartItemsViaAjaxLoadEnabled(), parent::getSharedConfig())",
+                    "is_literal": true
+                }
+            },
+            {
+                "previousValue": "",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod3",
+                "value": "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::MANIFEST_KEY"
+            },
+            {
+                "previousValue": [],
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod4",
+                "value": [
+                    "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::MANIFEST_KEY",
+                    "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::MANIFEST_KEY",
+                    "static::TEST_VALUE3"
+                ]
+            },
+            {
+                "previousValue": [],
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod5",
+                "value": {
+                    "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::MANIFEST_KEY": "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::TEST_VALUE2",
+                    "static::TEST_VALUE2": "static::TEST_VALUE3",
+                    "static::TEST_VALUE3": "static::TEST_VALUE5"
+                }
+            },
+            {
+                "previousValue": "",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod6",
+                "value": {
+                    "value": "return $this->get(\\Pyz\\Yves\\CartPage\\ConsoleConstants::ENABLE_DEVELOPMENT_CONSOLE_COMMANDS, false)",
+                    "is_literal": true
+                }
+            },
+            {
+                "previousValue": "",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod7",
+                "value": {
+                    "value": "return parent::get(\\Pyz\\Yves\\CartPage\\ConsoleConstants::ENABLE_DEVELOPMENT_CONSOLE_COMMANDS, false)",
+                    "is_literal": true
+                }
+            },
+            {
+                "value": true,
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod8"
+            },
+            {
+                "value": false,
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod9"
+            },
+            {
+                "previousValue": "",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod10",
+                "value": {
+                    "value": "return $this->getSharedConfig($test, [\\Pyz\\Yves\\CartPage\\CartPageConfig::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => [\\Pyz\\Yves\\CartPage\\CartPageConfig::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => 'test']])",
+                    "is_literal": true
+                }
+            },
+            {
+                "previousValue": "",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod11",
+                "value": {
+                    "value": "return static::getSharedConfig($test, [\\Pyz\\Yves\\CartPage\\CartPageConfig::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => [\\Pyz\\Yves\\CartPage\\CartPageConfig::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => 'test']])",
+                    "is_literal": true
+                }
+            },
+            {
+                "previousValue": "",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod12",
+                "value": {
+                    "value": "$paymentMethodStatemachineMapping = $this->getPaymentMethodStatemachineMapping(); if (!array_key_exists($getPayment->getPaymentSelection(), $paymentMethodStatemachineMapping)) { parent::determineProcessForOrderItem($quoteTransfer, $itemTransfer) } return $paymentMethodStatemachineMapping[$getPayment->getPaymentSelection()]",
+                    "is_literal": true
+                }
+            },
+            {
+                "previousValue": "static::TEST_VALUE",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testChange",
+                "value": "static::TEST_VALUE_CHANGE"
+            },
+            {
+                "previousValue": [
+                    "static::TEST_VALUE",
+                    "static::TEST_VALUE2",
+                    "static::TEST_VALUE3"
+                ],
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testChange2",
+                "value": [
+                    "static::TEST_VALUE4_CHANGE"
+                ]
+            },
+            {
+                "previousValue": {
+                    "static::TEST_VALUE": "static::TEST_VALUE2",
+                    "static::TEST_VALUE2": "static::TEST_VALUE3",
+                    "static::TEST_VALUE3": "static::TEST_VALUE5"
+                },
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testChange3",
+                "value": {
+                    "static::TEST_VALUE_CHANGE": "static::TEST_VALUE5_CHANGE"
+                }
+            },
+            {
+                "previousValue": {
+                    "static::TEST_VALUE": [
+                        "static::TEST_VALUE2"
+                    ],
+                    "static::TEST_VALUE2": [
+                        "static::TEST_VALUE3"
+                    ],
+                    "static::TEST_VALUE3": "static::TEST_VALUE5"
+                },
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testChange4",
+                "value": {
+                    "static::TEST_VALUE6": [
+                        "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::TEST_VALUE5"
+                    ],
+                    "static::TEST_VALUE7": {
+                        "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::TEST_VALUE3": "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::MANIFEST_KEY"
+                    }
+                }
+            },
+            {
+                "previousValue": [
+                    "parent::isCartCartItemsViaAjaxLoadEnabled()",
+                    "parent::getSharedConfig()"
+                ],
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testChange5",
+                "value": [
+                    "$this->getSharedConfig2()"
+                ]
+            },
+            {
+                "previousValue": "$array = [static::TEST_VARIABLE]; return array_merge($array, parent::isCartCartItemsViaAjaxLoadEnabled(), parent::getSharedConfig())",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testChange6",
+                "value": {
+                    "value": "$array = parent::isCartCartItemsViaAjaxLoadEnabledChanged(); $array = array_merge($array, [\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::TEST_VALUE, \\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::TEST_VALUE2]); return array_merge($array, [\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::TEST_VALUE => [\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::MANIFEST_KEY], \\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::TEST_VALUE2 => [\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::MANIFEST_KEY22]])",
+                    "is_literal": true
+                }
+            },
+            {
+                "previousValue": [
+                    "$this->getSharedConfig()"
+                ],
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testChangeArrayMerge",
+                "value": [
+                    "$this->getSharedConfigNew()"
+                ]
+            },
+            {
+                "previousValue": [
+                    "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::ALREADY_EXISTS_VARIABLE"
+                ],
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testChangeArrayMerge2",
+                "value": [
+                    "parent::TEST_VARIABLE",
+                    "$this->getTestVariable()"
+                ]
+            },
+            {
+                "previousValue": {
+                    "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::ALREADY_EXISTS_VARIABLE": [
+                        "parent::TEST_EXIST_VARIABLE"
+                    ]
+                },
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testChangeArrayMerge3",
+                "value": {
+                    "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::ALREADY_EXISTS_VARIABLE2": [
+                        "parent::TEST_EXIST_VARIABLE2"
+                    ]
+                }
+            },
+            {
+                "previousValue": [],
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::getConfigurationFieldsNotAllowedForEncoding",
+                "value": [
+                    "\\Generated\\Shared\\Transfer\\ProductConfigurationInstanceTransfer::QUANTITY"
+                ]
+            },
+            {
+                "previousValue": {
+                    "\/categories": {
+                        "isRegularExpression": false
+                    },
+                    "\/\\\/product-test.*\/": {
+                        "isRegularExpression": true,
+                        "methods": [
+                            "post"
+                        ]
+                    }
+                },
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::getProtectedPaths",
+                "value": {
+                    "\/\\\/product-attributes.*\/": {
+                        "isRegularExpression": true,
+                        "methods": [
+                            "get",
+                            "getCollection",
+                            "post",
+                            "patch"
+                        ]
+                    }
+                }
+            },
+            {
+                "previousValue": "",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::returnStringConstant",
+                "value": "PHP_EOL"
+            },
+            {
+                "previousValue": "",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::returnConstant",
+                "value": {
+                    "value": "return PHP_EOL",
+                    "is_literal": true
+                }
+            },
+            {
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::ARRAY_VALUE",
+                "value": [
+                    10,
+                    1000
+                ]
+            },
+            {
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::ASSOC_ARRAY_VALUE",
+                "value": {
+                    "key_1": "key_1_value",
+                    "key_2": "key_2_value"
+                }
+            },
+            {
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::BOOL_VALUE",
+                "value": true
+            },
+            {
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::INT_VALUE",
+                "value": 10
+            },
+            {
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::STRING_NULL_VALUE",
+                "value": "null"
+            },
+            {
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::NULL_VALUE",
+                "value": {
+                    "value": "null",
+                    "is_literal": true
+                }
+            }
+        ]
+    }
+}

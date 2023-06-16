@@ -1,0 +1,30 @@
+{
+    "Pyz.DependencyCollectionTest": {
+        "wire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireNoFileDependencyProvider::getBackofficeApplicationPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\EventDispatcherApplicationPlugin"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireNoFileDependencyProvider::getBackofficeApplicationPluginsWithRegularReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\EventDispatcherApplicationPlugin"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireNoFileDependencyProvider::getEventListenerPluginsWithCollectionReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\UrlStorageEventSubscriber"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireNoFileDependencyProvider::getEventListenerPluginsWithChainedCollectionReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\UrlStorageEventSubscriber"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireNoFileDependencyProvider::getEventListenerPluginsWithChainedCollectionReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\AvailabilityStorageEventSubscriber"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireNoFileDependencyProvider::extendConditionPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\TestFooConditionPlugin"
+            }
+        ]
+    }
+}

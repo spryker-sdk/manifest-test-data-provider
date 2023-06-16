@@ -1,0 +1,12 @@
+{
+    "Spryker.ProductsRestApi": {
+        "wire-glue-relationship": [
+            {
+                "target": "\\Spryker\\Glue\\GlueApplication\\GlueApplicationDependencyProvider",
+                "source": {
+                    "\\Spryker\\Glue\\QuoteRequestsRestApi\\QuoteRequestsRestApiConfig::RESOURCE_QUOTE_REQUESTS": "\\Spryker\\Glue\\ProductsRestApi\\Plugin\\GlueApplication\\ConcreteProductByQuoteRequestResourceRelationshipPlugin"
+                }
+            }
+        ]
+    }
+}

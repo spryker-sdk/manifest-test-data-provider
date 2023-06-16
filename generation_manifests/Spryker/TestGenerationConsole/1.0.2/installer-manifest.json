@@ -1,0 +1,18 @@
+{
+    "Pyz.Console": {
+        "wire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\Console\\TestWireConstructor\\ConsoleDependencyProvider::getConsoleCommands",
+                "source": "\\Pyz\\Zed\\Console\\TestWireConstructor\\DataImportConsole",
+                "arguments": {
+                    "constructor-arguments": [
+                        {
+                            "value": "\\Pyz\\Zed\\Console\\TestWireConstructor\\DataImportConsole::DEFAULT_NAME . static::COMMAND_SEPARATOR . \\Pyz\\Zed\\Console\\TestWireConstructor\\DataImportConfig::IMPORT_TYPE_STORE",
+                            "is_literal": true
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

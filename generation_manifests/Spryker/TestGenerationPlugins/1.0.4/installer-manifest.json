@@ -1,0 +1,70 @@
+{
+    "Pyz.DependencyCollectionTest": {
+        "wire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireKeysDependencyProvider::getEventListenerPluginsWithCollectionReturnAndKeys",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\CmsStorageEventSubscriber",
+                "arguments": {
+                    "append-arguments": [
+                        {
+                            "value": "CmsStorage"
+                        }
+                    ]
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireKeysDependencyProvider::getEventListenerPluginsWithCollectionReturnAndLiteralKeys",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\CmsStorageEventSubscriber",
+                "arguments": {
+                    "append-arguments": [
+                        {
+                            "value": "'Foo' . 'CmsStorage'",
+                            "is_literal": true
+                        }
+                    ]
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireKeysDependencyProvider::extendConditionPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\TestBarConditionPlugin",
+                "arguments": {
+                    "prepend-arguments": [
+                        {
+                            "value": "Test\/BarCondition"
+                        }
+                    ]
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireKeysDependencyProvider::getBackofficeApplicationPluginsWithKeys",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\FooPlugin",
+                "index": "foo"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireKeysDependencyProvider::getBackofficeApplicationPluginsWithKeys",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\BarPlugin",
+                "index": "static::BAR"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireKeysDependencyProvider::getBackofficeApplicationPluginsWithKeys",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\BazPlugin",
+                "index": "\\Pyz\\Zed\\DependencyCollectionTest\\SharedConstants::BAZ"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireKeysDependencyProvider::getBackofficeApplicationPluginsWithKeysAssignment",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\FooPlugin",
+                "index": "foo"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireKeysDependencyProvider::getBackofficeApplicationPluginsWithKeysAssignment",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\BarPlugin",
+                "index": "static::BAR"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireKeysDependencyProvider::getBackofficeApplicationPluginsWithKeysAssignment",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\BazPlugin",
+                "index": "\\Pyz\\Zed\\DependencyCollectionTest\\SharedConstants::BAZ"
+            }
+        ]
+    }
+}

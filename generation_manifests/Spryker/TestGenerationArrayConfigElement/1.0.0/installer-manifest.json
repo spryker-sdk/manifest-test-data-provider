@@ -1,0 +1,25 @@
+{
+    "Spryker.TestIntegrator": {
+        "add-config-array-element": [
+            {
+                "target": "\\Spryker\\Client\\RabbitMq\\RabbitMqConfig::getTestConfiguration",
+                "value": "\\Spryker\\Shared\\TestIntegrator\\TestIntegratorAddArrayElementFirst::TEST_INTEGRATION_ADD_ARRAY_ELEMENT_CONST_FIRST"
+            },
+            {
+                "target": "\\Spryker\\Client\\RabbitMq\\RabbitMqConfig::getTestConfiguration",
+                "value": "\\Spryker\\Shared\\TestIntegrator\\TestIntegratorAddArrayElementSecond::TEST_INTEGRATION_ADD_ARRAY_ELEMENT_CONST_SECOND"
+            },
+            {
+                "target": "\\Spryker\\Client\\RabbitMq\\RabbitMqConfig::getSynchronizationConfiguration",
+                "value": "\\Spryker\\Shared\\TestIntegrator\\PublishAndSynchronizeHealthCheckSearchConfig::SYNC_SEARCH_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK"
+            },
+            {
+                "target": "\\Spryker\\Client\\RabbitMq\\RabbitMqConfig::getSynchronizationQueueConfiguration",
+                "value": "\\Spryker\\Shared\\TestIntegrator\\PublishAndSynchronizeHealthCheckSearchConfig::SYNC_SEARCH_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK",
+                "call": {
+                    "target": "\\Spryker\\Client\\RabbitMq\\RabbitMqConfig::getQueueConfiguration"
+                }
+            }
+        ]
+    }
+}
