@@ -1,0 +1,248 @@
+{
+    "Pyz.DependencyCollectionTest": {
+        "wire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getSinglePlugin",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\EventDispatcherApplicationPlugin"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getBackofficeApplicationPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\EventDispatcherApplicationPlugin"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getBackofficeApplicationPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\CustomerUnsubscribePlugin",
+                "arguments": {
+                    "constructor-arguments": [
+                        {
+                            "value": [
+                                "\\Pyz\\Zed\\DependencyCollectionTest\\NewsletterConstants::DEFAULT_NEWSLETTER_TYPE"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getBackofficeApplicationPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\WebProfilerApplicationPlugin",
+                "condition": "class_exists(\\Pyz\\Zed\\DependencyCollectionTest\\WebProfilerApplicationPlugin::class)"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getBackofficeApplicationPluginsWithRegularMultipleReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\TestFooConditionPlugin"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getBackofficeApplicationPluginsWithRegularReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\EventFirstDispatcherApplicationPlugin",
+                "position": {
+                    "before": "\\FQCN\\EventSecondDispatcherApplicationPlugin"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getBackofficeApplicationPluginsWithRegularReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\EventSecondDispatcherApplicationPlugin",
+                "position": {
+                    "after": "\\FQCN\\EventFirstDispatcherApplicationPlugin"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getBackofficeApplicationPluginsWithRegularReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\EventThirdDispatcherApplicationPlugin",
+                "position": {
+                    "after": [
+                        "\\FQCN\\EventFirstDispatcherApplicationPlugin",
+                        "\\FQCN\\EventSecondDispatcherApplicationPlugin"
+                    ]
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getBackofficeApplicationPluginsWithRegularReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\TranslationPlugin",
+                "position": {
+                    "after": "\\FQCN\\EventThirdDispatcherApplicationPlugin"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getSchedulerAdapterPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\EventDispatcherApplicationPlugin",
+                "index": "\\Spryker\\Shared\\Config\\Config::get(\\Spryker\\Shared\\Log\\LogConstants::LOG_QUEUE_NAME)"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getAssociatedArrayPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\ProductLabelDataLoaderExpanderPlugin",
+                "index": "\\Pyz\\Zed\\DependencyCollectionTest\\ProductLabelSearchConfig::PLUGIN_PRODUCT_LABEL_DATA"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getAssociatedArrayPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\ProductReviewDataLoaderExpanderPlugin",
+                "index": "\\Pyz\\Zed\\DependencyCollectionTest\\ProductReviewSearchConfig::PLUGIN_PRODUCT_PAGE_RATING_DATA"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getAssociatedArrayPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\LogglyLoggerQueueMessageProcessorPlugin",
+                "index": "\\Spryker\\Shared\\Config\\Config::get(\\Spryker\\Shared\\Log\\LogConstants::LOG_QUEUE_NAME)"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getGrantTypeConfigurationProviderPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\ProductReviewSearchConfig"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionA",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\EventDispatcherApplicationPlugin",
+                "call": {
+                    "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedPlugins",
+                    "before": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionB"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionB",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\TestFooConditionPlugin",
+                "call": {
+                    "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedPlugins",
+                    "after": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionA"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionC",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\ProductLabelDataLoaderExpanderPlugin",
+                "index": "\\Pyz\\Zed\\DependencyCollectionTest\\ProductLabelSearchConfig::PLUGIN_PRODUCT_LABEL_DATA",
+                "call": {
+                    "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedPluginsWithParentCall"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionC",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\ProductReviewDataLoaderExpanderPlugin",
+                "index": "\\Pyz\\Zed\\DependencyCollectionTest\\ProductReviewSearchConfig::PLUGIN_PRODUCT_PAGE_RATING_DATA",
+                "call": {
+                    "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedPluginsWithParentCall"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionC",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\LogglyLoggerQueueMessageProcessorPlugin",
+                "index": "\\Spryker\\Shared\\Config\\Config::get(\\Spryker\\Shared\\Log\\LogConstants::LOG_QUEUE_NAME)",
+                "call": {
+                    "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedPluginsWithParentCall"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionF",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\TestFooBarPlugin2",
+                "index": "key",
+                "call": {
+                    "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionArrayMergeExtension",
+                    "after": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionE",
+                    "index": "indexKey"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::wrapMultidimensionalArray1",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\Plugin1",
+                "index": "key1",
+                "call": {
+                    "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionC",
+                    "before": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::wrapMultidimensionalArray2",
+                    "index": "multidimensionalWrapKey1"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::wrapMultidimensionalArray1",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\Plugin2",
+                "index": "key2",
+                "call": {
+                    "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionC",
+                    "before": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::wrapMultidimensionalArray2",
+                    "index": "multidimensionalWrapKey1"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::wrapMultidimensionalArray2",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\Plugin3",
+                "call": {
+                    "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionC",
+                    "after": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::wrapMultidimensionalArray1"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::wrapMultidimensionalArray3",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\Plugin4",
+                "index": "key4",
+                "call": {
+                    "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getWrappedFunctionC",
+                    "after": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::wrapMultidimensionalArray2",
+                    "index": "multidimensionalWrapKey3"
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getEventListenerPluginsWithCollectionReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\AvailabilityStorageEventSubscriber"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getEventListenerPluginsWithChainedCollectionReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\FooStorageEventSubscriber"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::extendConditionPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\TestBarConditionPlugin"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getConsoleCommands",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\CacheWarmerConsole"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getConsoleCommands",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\BuildNavigationConsole",
+                "arguments": {
+                    "constructor-arguments": [
+                        {
+                            "source": "\\Pyz\\Zed\\DependencyCollectionTest\\PluginParam"
+                        }
+                    ]
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getConsoleCommands",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\DataImportConsole",
+                "arguments": {
+                    "constructor-arguments": [
+                        {
+                            "value": "\\Pyz\\Zed\\DataImport\\DataImportConfig::ANY_NAME . ':' . \\Pyz\\Zed\\DataImport\\DataImportConfig::IMPORT_TYPE_STORE",
+                            "is_literal": true
+                        }
+                    ]
+                }
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getConsoleCommands",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\DataImportConsole",
+                "arguments": {
+                    "constructor-arguments": [
+                        {
+                            "value": "\\Pyz\\Zed\\DataImport\\DataImportConfig::ANY_NAME . ':' . \\Pyz\\Zed\\DataImport\\DataImportConfig::IMPORT_TYPE_CURRENCY",
+                            "is_literal": true
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "Spryker.SchedulerJenkins": {
+        "wire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getSchedulerAdapterPlugins",
+                "source": "\\Spryker\\Zed\\SchedulerJenkins\\Communication\\Plugin\\Adapter\\SchedulerJenkinsAdapterPlugin",
+                "index": "\\Pyz\\Shared\\Scheduler\\SchedulerConfig::PYZ_SCHEDULER_JENKINS"
+            }
+        ]
+    },
+    "Spryker.CustomerStorage": {
+        "wire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getProcessorMessagePlugins",
+                "source": "\\Spryker\\Zed\\Synchronization\\Communication\\Plugin\\Queue\\SynchronizationStorageQueueMessageProcessorPlugin",
+                "index": "\\Spryker\\Shared\\CustomerStorage\\CustomerStorageConfig::CUSTOMER_INVALIDATED_SYNC_STORAGE_QUEUE"
+            }
+        ]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "SprykerShop.MultiCartWidget": {
+        "wire-widget": [
+            {
+                "source": "\\SprykerShop\\Yves\\MultiCartWidget\\Widget\\AddToMultiCartWidget"
+            }
+        ]
+    },
+    "SprykerShop.ShoppingListWidget": {
+        "unwire-widget": [
+            {
+                "source": "\\SprykerShop\\Yves\\ShoppingListWidget\\Widget\\AddToShoppingListWidget"
+            }
+        ]
+    }
+}

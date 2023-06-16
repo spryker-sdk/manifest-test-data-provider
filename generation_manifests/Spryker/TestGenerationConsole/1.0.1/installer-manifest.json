@@ -1,0 +1,16 @@
+{
+    "Pyz.Console": {
+        "wire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\Console\\TestWireUnwireProjectMethods\\ConsoleDependencyProvider::getApplicationPlugins",
+                "source": "\\Pyz\\Zed\\Console\\TestWireUnwireProjectMethods\\TwigNewApplicationPlugin"
+            }
+        ],
+        "unwire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\Console\\TestWireUnwireProjectMethods\\ConsoleDependencyProvider::getApplicationPlugins",
+                "source": "\\Pyz\\Zed\\Console\\TestWireUnwireProjectMethods\\TwigApplicationPlugin"
+            }
+        ]
+    }
+}

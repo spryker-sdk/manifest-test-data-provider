@@ -1,0 +1,48 @@
+{
+    "Pyz.DependencyCollectionTest": {
+        "wire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireUnwireDependencyProvider::getBackofficeApplicationPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\SessionApplicationPlugin"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireUnwireDependencyProvider::getBackofficeApplicationPluginsWithRegularReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\SessionApplicationPlugin"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireUnwireDependencyProvider::getEventListenerPluginsWithCollectionReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\CmsStorageEventSubscriber"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireUnwireDependencyProvider::getEventListenerPluginsWithChainedCollectionReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\BarStorageEventSubscriber"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireUnwireDependencyProvider::extendConditionPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\TestBazConditionPlugin"
+            }
+        ],
+        "unwire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireUnwireDependencyProvider::getBackofficeApplicationPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\EventDispatcherApplicationPlugin"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireUnwireDependencyProvider::getBackofficeApplicationPluginsWithRegularReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\EventDispatcherApplicationPlugin"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireUnwireDependencyProvider::getEventListenerPluginsWithCollectionReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\AvailabilityStorageEventSubscriber"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireUnwireDependencyProvider::getEventListenerPluginsWithChainedCollectionReturn",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\FooStorageEventSubscriber"
+            },
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireUnwireDependencyProvider::extendConditionPlugins",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\TestBarConditionPlugin"
+            }
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <!-- Test redundant comment -->
+    <main>
+        <label>Main</label>
+        <title>Main</title>
+        <icon>fa-archive</icon>
+        <bundle>main</bundle>
+        <controller>index</controller>
+        <action>index</action>
+    </main>
+    <delete>
+        <label>delete</label>
+        <bundle>delete</bundle>
+    </delete>
+    <!-- Test redundant comment -->
+</config>
+
+

@@ -1,0 +1,16 @@
+{
+    "Pyz.Console": {
+        "wire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\Console\\TestWireUnwire\\ConsoleDependencyProvider::getConsoleCommands",
+                "source": "\\Pyz\\Zed\\Console\\TestWireUnwire\\BuildNewNavigationConsole"
+            }
+        ],
+        "unwire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\Console\\TestWireUnwire\\ConsoleDependencyProvider::getConsoleCommands",
+                "source": "\\Pyz\\Zed\\Console\\TestWireUnwire\\BuildNavigationConsole"
+            }
+        ]
+    }
+}

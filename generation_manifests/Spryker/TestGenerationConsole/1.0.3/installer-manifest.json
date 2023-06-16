@@ -1,0 +1,22 @@
+{
+    "Pyz.Console": {
+        "wire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\Console\\TestWireUnwireDev\\ConsoleDependencyProvider::getConsoleCommands",
+                "source": "\\Pyz\\Zed\\Console\\TestWireUnwireDev\\RouterDebugBackofficeConsole",
+                "condition": "$this->getConfig()->isDevelopmentConsoleCommandsEnabled()"
+            },
+            {
+                "target": "\\Spryker\\Zed\\Console\\TestWireUnwireDev\\ConsoleDependencyProvider::getConsoleCommands",
+                "source": "\\Pyz\\Zed\\Console\\TestWireUnwireDev\\BenchmarkNewRunConsole",
+                "condition": "class_exists(\\Pyz\\Zed\\Console\\TestWireUnwireDev\\BenchmarkRunConsole::class)"
+            }
+        ],
+        "unwire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\Console\\TestWireUnwireDev\\ConsoleDependencyProvider::getConsoleCommands",
+                "source": "\\Pyz\\Zed\\Console\\TestWireUnwireDev\\BenchmarkRunConsole"
+            }
+        ]
+    }
+}

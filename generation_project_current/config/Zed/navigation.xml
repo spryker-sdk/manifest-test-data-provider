@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config>
+    <!-- Test redundant comment -->
+    <before-main>
+        <bundle>before-main</bundle>
+        <controller>index</controller>
+        <pages>
+            <before-main-nested>
+                <bundle>before-main-nested</bundle>
+                <controller>index</controller>
+                <action>index</action>
+                <visible>0</visible>
+            </before-main-nested>
+        </pages>
+    </before-main>
+    <main>
+        <label>Main</label>
+        <icon>fa-archive</icon>
+        <bundle>main</bundle>
+        <controller>index</controller>
+        <action>index2</action>
+        <pages>
+            <main-nested>
+                <bundle>main</bundle>
+                <controller>index</controller>
+                <action>index</action>
+                <visible>1</visible>
+            </main-nested>
+            <main-nested-second>
+                <bundle>main</bundle>
+                <controller>index</controller>
+                <action>index</action>
+                <visible>0</visible>
+            </main-nested-second>
+        </pages>
+    </main>
+    <after-main>
+        <bundle>after-main</bundle>
+        <controller>index</controller>
+    </after-main>
+    <new-latest>
+        <bundle>after-main</bundle>
+    </new-latest>
+    <broken-item>
+        <without-bundle>without-bundle</without-bundle>
+    </broken-item>
+</config>

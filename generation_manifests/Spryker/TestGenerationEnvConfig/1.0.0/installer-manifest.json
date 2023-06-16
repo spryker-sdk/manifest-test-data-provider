@@ -1,0 +1,180 @@
+{
+    "Spryker.Kernel": {
+        "configure-env": [
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::RESOLVABLE_CLASS_NAMES_CACHE_ENABLED_TRUE",
+                "value": true
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::RESOLVABLE_CLASS_NAMES_CACHE_ENABLED_FALSE",
+                "value": false
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::PROJECT_NAMESPACE",
+                "value": "Pyz"
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::VAR_BOOL_CAST_VALUE",
+                "value": {
+                    "value": "(bool)$config[\\Spryker\\Shared\\Kernel\\KernelConstants::PROJECT_NAMESPACE]",
+                    "is_literal": true
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::FUNC_VALUE",
+                "value": {
+                    "value": "getenv('SOMEKEY')",
+                    "is_literal": true
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::PRIVATE_KEY_PATH",
+                "value": {
+                    "value": "str_replace('__LINE__', PHP_EOL, getenv('SPRYKER_OAUTH_KEY_PRIVATE') ?: '') ?: null",
+                    "is_literal": true
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::COMPLEX_ARRAY_STRUCTURE",
+                "value": [
+                    "SprykerShop",
+                    "APPLICATION_SOURCE_DIR . '\/vendor\/spryker\/payment\/config\/Zed\/Oms'",
+                    "getenv('SOMEKEY')",
+                    "(bool)$config[\\Spryker\\Shared\\Kernel\\KernelConstants::PROJECT_NAMESPACE]"
+                ]
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::PRIVATE_NAME",
+                "value": {
+                    "value": "APPLICATION_SOURCE_DIR . '\/Generated\/Glue\/Specification\/spryker_rest_api.schema.yml'",
+                    "is_literal": true
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::PRIVATE_NAME2",
+                "value": [
+                    "APPLICATION_SOURCE_DIR . '\/vendor\/spryker\/payment\/config\/Zed\/Oms'"
+                ]
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::ENCRYPTION_KEY",
+                "value": {
+                    "value": "getenv('SPRYKER_OAUTH_ENCRYPTION_KEY') ?: null",
+                    "is_literal": true
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::ENCRYPTION_KEY_OTHER",
+                "value": {
+                    "value": "getenv('SPRYKER_OAUTH_ENCRYPTION_KEY') ? 'test' : 'other_test'",
+                    "is_literal": true
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::AUTH_DEFAULT_CREDENTIALS",
+                "value": {
+                    "yves_system": {
+                        "token": "getenv('SPRYKER_ZED_REQUEST_TOKEN') ?: ''"
+                    }
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::ACL_DEFAULT_RULES",
+                "value": [
+                    {
+                        "bundle": "security-gui",
+                        "controller": "*",
+                        "action": "*",
+                        "type": "allow"
+                    },
+                    {
+                        "bundle": "acl",
+                        "controller": "index",
+                        "action": "denied",
+                        "type": "allow"
+                    }
+                ]
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::STORAGE_REDIS_CONNECTION_OPTIONS",
+                "value": {
+                    "value": "json_decode(getenv('SPRYKER_KEY_VALUE_STORE_CONNECTION_OPTIONS') ?: '[]', true) ?: []",
+                    "is_literal": true
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::LOGGER_CONFIG_GLUE",
+                "value": "\\Spryker\\Shared\\Kernel\\KernelConstants::class"
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::OAUTH_PROVIDER_NAME",
+                "value": "\\Spryker\\Zed\\OauthAuth0\\OauthAuth0Config::PROVIDER_NAME"
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::VARIBLE_ASSIGN",
+                "value": {
+                    "value": "$config",
+                    "is_literal": true
+                }
+            }
+        ]
+    },
+    "Spryker.Queue": {
+        "configure-env": [
+            {
+                "target": "\\Spryker\\Shared\\Queue\\QueueConstants::QUEUE_ADAPTER_CONFIGURATION_DEFAULT",
+                "value": {
+                    "\\Spryker\\Shared\\Queue\\QueueConfig::CONFIG_QUEUE_ADAPTER": "\\Spryker\\Client\\RabbitMq\\Model\\RabbitMqAdapter::class",
+                    "\\Spryker\\Shared\\Queue\\QueueConfig::CONFIG_MAX_WORKER_NUMBER": 1,
+                    "\\Spryker\\Shared\\Queue\\QueueConfig::CONFIG_FLOAT_VALUE": 10,
+                    "\\Spryker\\Shared\\Queue\\QueueConfig::CONFIG_BOOL_VALUE": true
+                }
+            }
+        ]
+    },
+    "Spryker.OauthClient": {
+        "configure-env": [
+            {
+                "target": "\\Spryker\\Shared\\OauthClient\\OauthClientConstants::TEST_CONSTANT_A",
+                "value": {
+                    "value": "getenv('SPRYKER_OAUTH_ENCRYPTION_KEY') ?: null",
+                    "is_literal": true
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\OauthClient\\OauthClientConstants::TEST_CONSTANT_B",
+                "value": {
+                    "value": "getenv('SPRYKER_OAUTH_ENCRYPTION_KEY') ?: null",
+                    "is_literal": true
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\OauthClient\\OauthClientConstants::TEST_CONSTANT_C",
+                "value": {
+                    "value": "getenv('SPRYKER_OAUTH_ENCRYPTION_KEY') ?: null",
+                    "is_literal": true
+                }
+            }
+        ]
+    },
+    "Spryker.OauthAuth0": {
+        "configure-env": [
+            {
+                "target": "\\Spryker\\Client\\OauthAuth0\\OauthAuth0Config::TEST_CONSTANT_B",
+                "value": "const_value"
+            }
+        ]
+    },
+    "Spryker.AppCatalogGui": {
+        "configure-env": [
+            {
+                "target": "\\Spryker\\Shared\\AppCatalogGui\\AppCatalogGuiConstants::TEST_CONSTANT_A",
+                "value": "new_value"
+            },
+            {
+                "target": "\\Spryker\\Shared\\AppCatalogGui\\AppCatalogGuiConstants::TEST_CONSTANT_B",
+                "value": "new_value"
+            }
+        ]
+    }
+}
