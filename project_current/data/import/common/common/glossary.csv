@@ -1,4 +1,5 @@
-shopping_list.pre.check.test_key_existing,existing value,en_US
-shopping_list.pre.check.test_key_existing,existing value,de_DE
-shopping_list.pre.check.test_key_new,new value,en_US
-shopping_list.pre.check.test_key_new,new value,de_DE
+key,translation,locale
+test_glossary.shipping.test_key_existing,existing value,en_US
+test_glossary.shipping.test_key_existing,existing value,de_DE
+test_glossary.shipping.test_key_new,+ Versand,de_DE
+test_glossary.shipping.test_key_new,+ Shipping,en_US
