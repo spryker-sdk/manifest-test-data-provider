@@ -1,2 +1,3 @@
-shopping_list.pre.check.test_key_existing,existing value,en_US
-shopping_list.pre.check.test_key_existing,existing value,de_DE
+key,translation,locale
+test_glossary.shipping.test_key_existing,existing value,en_US
+test_glossary.shipping.test_key_existing,existing value,de_DE
