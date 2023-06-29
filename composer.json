@@ -1,6 +1,6 @@
 {
   "name": "spryker-sdk/manifest-test-data-provider",
-  "description": "Data provider for manifests generation and integration tests",
+  "description": "Data provider for integrator/manifests generation and integration tests",
   "type": "library",
   "license": "proprietary",
   "require": {
