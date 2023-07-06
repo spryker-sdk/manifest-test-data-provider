@@ -1,0 +1,66 @@
+{
+    "Spryker.PriceProduct": {
+        "wire-transfer": [
+            {
+                "target": "Shared\/PriceProduct\/Transfer\/price_product.transfer.xml",
+                "data": {
+                    "name": "transfers",
+                    "sub-nodes": [
+                        {
+                            "name": "transfer",
+                            "attributes": {
+                                "name": "PriceProduct"
+                            },
+                            "sub-nodes": [
+                                {
+                                    "name": "property",
+                                    "attributes": {
+                                        "name": "newPropertyOne",
+                                        "type": "int",
+                                        "singular": "newPropertyOne"
+                                    }
+                                },
+                                {
+                                    "name": "property",
+                                    "attributes": {
+                                        "name": "newPropertyTwo",
+                                        "type": "string"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "name": "transfer",
+                            "attributes": {
+                                "name": "NewTransfer"
+                            },
+                            "sub-nodes": [
+                                {
+                                    "name": "property",
+                                    "attributes": {
+                                        "name": "idCurrency",
+                                        "type": "int"
+                                    }
+                                },
+                                {
+                                    "name": "property",
+                                    "attributes": {
+                                        "name": "code",
+                                        "type": "string"
+                                    }
+                                },
+                                {
+                                    "name": "property",
+                                    "attributes": {
+                                        "name": "name",
+                                        "type": "string"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
