@@ -1,0 +1,9 @@
+{
+    "name": "spryker-shop/suite",
+    "description": "Spryker Shop Suite",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.0",
+        "spryker/test-integrator-glossary": "^1.0"
+    }
+}
