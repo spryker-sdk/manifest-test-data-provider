@@ -55,6 +55,14 @@
         {
             "name": "spryker/test-integrator-add-config-array-element",
             "version": "1.0.0"
+        },
+        {
+            "name": "spryker/test-integrator-wire-transfer",
+            "version": "1.0.1"
+        },
+        {
+            "name": "spryker/test-integrator-wire-schema",
+            "version": "1.0.1"
         }
     ]
 }

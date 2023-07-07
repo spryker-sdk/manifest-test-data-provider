@@ -1,0 +1,64 @@
+{
+    "wire-schema": [
+        {
+            "target": "Zed\/TestIntegratorWireTransfer\/Persistence\/Propel\/Schema\/spy_store.schema.xml",
+            "data": {
+                "name": "database",
+                "attributes": {
+                    "name": "zed",
+                    "namespace": "Orm\\Zed\\Category\\Persistence",
+                    "package": "src.Orm.Zed.Category.Persistence"
+                },
+                "sub-nodes": [
+                    {
+                        "name": "table",
+                        "attributes": {
+                            "name": "spy_category"
+                        },
+                        "sub-nodes": [
+                            {
+                                "name": "behavior",
+                                "attributes": {
+                                    "name": "event"
+                                },
+                                "sub-nodes": [
+                                    {
+                                        "name": "parameter",
+                                        "attributes": {
+                                            "name": "spy_category_all",
+                                            "column": "*"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "table",
+                        "attributes": {
+                            "name": "spy_category_store"
+                        },
+                        "sub-nodes": [
+                            {
+                                "name": "behavior",
+                                "attributes": {
+                                    "name": "event"
+                                },
+                                "sub-nodes": [
+                                    {
+                                        "name": "parameter",
+                                        "attributes": {
+                                            "name": "spy_category_store_all",
+                                            "column": "*"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
+
