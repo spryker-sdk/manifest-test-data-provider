@@ -14,7 +14,11 @@ nbproject/
 
 # tooling
 vendor/
-!project_original/vendor/
+!integrator/project_original/vendor/
+!general/project_original/vendor/
+!generator/project_original/vendor/
 composer.lock
-!project_original/composer.lock
+!integrator/project_original/composer.lock
+!general/project_original/composer.lock
+!generator/project_original/composer.lock
 .phpunit.result.cache
