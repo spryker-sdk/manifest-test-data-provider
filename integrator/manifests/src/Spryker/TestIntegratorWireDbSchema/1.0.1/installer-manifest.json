@@ -55,6 +55,12 @@
                                 ]
                             }
                         ]
+                    },
+                    {
+                        "name": "behavior",
+                        "attributes": {
+                            "name": "\\Spryker\\Zed\\AclEntity\\Persistence\\Propel\\Behavior\\AclEntityBehavior"
+                        }
                     }
                 ]
             }
