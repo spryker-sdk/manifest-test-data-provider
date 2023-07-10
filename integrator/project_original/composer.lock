@@ -61,7 +61,7 @@
             "version": "1.0.1"
         },
         {
-            "name": "spryker/test-integrator-wire-schema",
+            "name": "spryker/test-integrator-wire-db-schema",
             "version": "1.0.1"
         }
     ]

@@ -1,7 +1,7 @@
 {
     "wire-schema": [
         {
-            "target": "Zed\/TestIntegratorWireTransfer\/Persistence\/Propel\/Schema\/spy_store.schema.xml",
+            "target": "Zed\/TestIntegratorWireDbSchema\/Persistence\/Propel\/Schema\/spy_store.schema.xml",
             "data": {
                 "name": "database",
                 "attributes": {

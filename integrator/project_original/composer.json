@@ -19,6 +19,6 @@
         "spryker/test-integrator-unwire-glue-relationship": "^1.0.1",
         "spryker/test-integrator-add-config-array-element": "^1.0",
         "spryker/test-integrator-wire-transfer": "^1.0.1",
-        "spryker/test-integrator-wire-schema": "^1.0.1"
+        "spryker/test-integrator-wire-db-schema": "^1.0.1"
     }
 }
