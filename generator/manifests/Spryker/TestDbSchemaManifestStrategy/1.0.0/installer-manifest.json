@@ -37,6 +37,37 @@
                         {
                             "name": "table",
                             "attributes": {
+                                "name": "spy_category_template"
+                            },
+                            "sub-nodes": [
+                                {
+                                    "name": "column",
+                                    "attributes": {
+                                        "name": "test",
+                                        "type": "VARCHAR",
+                                        "size": "255",
+                                        "description": "test key"
+                                    }
+                                },
+                                {
+                                    "name": "unique",
+                                    "attributes": {
+                                        "name": "spy_product_option_group-unique-test"
+                                    },
+                                    "sub-nodes": [
+                                        {
+                                            "name": "unique-column",
+                                            "attributes": {
+                                                "name": "test"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "table",
+                            "attributes": {
                                 "name": "spy_category_store"
                             },
                             "sub-nodes": [

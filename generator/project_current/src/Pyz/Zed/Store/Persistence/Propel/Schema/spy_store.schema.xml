@@ -9,9 +9,14 @@
     </table>
 
     <table name="spy_category_template">
+        <column name="test" type="VARCHAR" size="255" description="test key"/>
+        <unique name="spy_product_option_group-unique-test">
+            <unique-column name="test"/>
+        </unique>
         <behavior name="event">
             <parameter name="spy_category_template_all" column="*"/>
         </behavior>
+
     </table>
 
     <table name="spy_category_store">
