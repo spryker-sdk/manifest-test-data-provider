@@ -16,6 +16,46 @@
             {
                 "target": "\\Spryker\\Glue\\GlueApplication\\GlueApplicationDependencyProvider::getConventionPlugins",
                 "source": "\\Spryker\\Glue\\GlueRestApiConvention\\Plugin\\GlueApplication\\RestConventionPlugin"
+            },
+            {
+                "target": "\\Spryker\\Glue\\GlueRestApiConvention\\GlueRestApiConventionDependencyProvider::getResponseEncoderPlugins",
+                "source": "\\Spryker\\Glue\\GlueRestApiConvention\\Plugin\\GlueRestApiConvention\\JsonResponseEncoderPlugin"
+            },
+            {
+                "target": "\\Spryker\\Glue\\GlueRestApiConvention\\GlueRestApiConventionDependencyProvider::getRequestBuilderPlugins",
+                "source": "\\Spryker\\Glue\\GlueRestApiConvention\\Plugin\\GlueApplication\\ConventionIdentifierRequestBuilderPlugin"
+            },
+            {
+                "target": "\\Spryker\\Glue\\GlueRestApiConvention\\GlueRestApiConventionDependencyProvider::getRequestBuilderPlugins",
+                "source": "\\Spryker\\Glue\\GlueRestApiConvention\\Plugin\\GlueApplication\\FormatRequestBuilderPlugin"
+            },
+            {
+                "target": "\\Spryker\\Glue\\GlueRestApiConvention\\GlueRestApiConventionDependencyProvider::getRequestBuilderPlugins",
+                "source": "\\Spryker\\Glue\\GlueRestApiConvention\\Plugin\\GlueApplication\\PaginationRequestBuilderPlugin"
+            },
+            {
+                "target": "\\Spryker\\Glue\\GlueRestApiConvention\\GlueRestApiConventionDependencyProvider::getRequestBuilderPlugins",
+                "source": "\\Spryker\\Glue\\GlueRestApiConvention\\Plugin\\GlueApplication\\SortRequestBuilderPlugin"
+            },
+            {
+                "target": "\\Spryker\\Glue\\GlueRestApiConvention\\GlueRestApiConventionDependencyProvider::getRequestBuilderPlugins",
+                "source": "\\Spryker\\Glue\\GlueRestApiConvention\\Plugin\\GlueApplication\\FilterFieldRequestBuilderPlugin"
+            },
+            {
+                "target": "\\Spryker\\Glue\\GlueRestApiConvention\\GlueRestApiConventionDependencyProvider::getRequestBuilderPlugins",
+                "source": "\\Spryker\\Glue\\GlueRestApiConvention\\Plugin\\GlueApplication\\SparseFieldRequestBuilderPlugin"
+            },
+            {
+                "target": "\\Spryker\\Glue\\GlueRestApiConvention\\GlueRestApiConventionDependencyProvider::getRequestBuilderPlugins",
+                "source": "\\Spryker\\Glue\\GlueRestApiConvention\\Plugin\\GlueApplication\\AttributesRequestBuilderPlugin"
+            },
+            {
+                "target": "\\Spryker\\Glue\\GlueRestApiConvention\\GlueRestApiConventionDependencyProvider::getRequestValidatorPlugins",
+                "source": "\\Spryker\\Glue\\GlueRestApiConvention\\Plugin\\GlueApplication\\AcceptFormatRequestValidatorPlugin"
+            },
+            {
+                "target": "\\Spryker\\Glue\\GlueRestApiConvention\\GlueRestApiConventionDependencyProvider::getResponseFormatterPlugins",
+                "source": "\\Spryker\\Glue\\GlueRestApiConvention\\Plugin\\GlueApplication\\RestApiResponseFormatterPlugin"
             }
         ]
     },
