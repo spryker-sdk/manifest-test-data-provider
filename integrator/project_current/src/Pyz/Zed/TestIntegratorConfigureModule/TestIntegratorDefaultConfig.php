@@ -222,6 +222,14 @@ class TestIntegratorDefaultConfig extends BaseConfig
             ],
         ];
     }
+
+    /**
+     * @return array<mixed>
+     */
+    public function returnEmptyValueWithPreviousDefined(): array
+    {
+        return [100, 'text'];
+    }
     /**
      * @return bool
      */
@@ -344,5 +352,13 @@ class TestIntegratorDefaultConfig extends BaseConfig
     public function returnConstantCase3() : string
     {
         return PHP_EOL;
+    }
+    /**
+     * @return array
+     */
+    public function returnEmptyValue() : array
+    {
+        return [
+        ];
     }
 }
