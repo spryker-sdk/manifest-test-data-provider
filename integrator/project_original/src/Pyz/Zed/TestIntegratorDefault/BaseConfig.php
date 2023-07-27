@@ -10,4 +10,14 @@ namespace Pyz\Zed\TestIntegratorDefault;
 class BaseConfig
 {
     protected const BOOL_VALUE = true;
+
+    /**
+     * @return string[]
+     */
+    public function getAllowedLanguages() : array
+    {
+        return [
+            'de',
+        ];
+    }
 }
