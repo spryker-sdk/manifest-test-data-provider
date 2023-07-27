@@ -352,4 +352,11 @@ class TestIntegratorDefaultConfig extends BaseConfig
     {
         return (new \SprykerShop\Zed\Kernel\Container())->getLocator()->locale()->client()->getAllowedLanguages();
     }
+    /**
+     * @return int
+     */
+    protected function getNumber() : int
+    {
+        return 10;
+    }
 }

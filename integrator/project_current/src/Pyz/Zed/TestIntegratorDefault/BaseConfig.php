@@ -20,4 +20,12 @@ class BaseConfig
             'de',
         ];
     }
+
+    /**
+     * @return int
+     */
+    protected function getNumber() : int
+    {
+        return 10;
+    }
 }
