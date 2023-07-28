@@ -7,7 +7,7 @@
 
 namespace Pyz\Zed\TestIntegratorDefault;
 
-class BaseConfig
+class BaseConfig extends AbstractConfig
 {
     protected const BOOL_VALUE = true;
 }

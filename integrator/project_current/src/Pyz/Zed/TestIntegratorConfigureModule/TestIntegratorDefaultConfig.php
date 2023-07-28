@@ -17,7 +17,8 @@ class TestIntegratorDefaultConfig extends BaseConfig
     public const OTHER_CONSTANT = PHP_EOL;
     public const STRAIGHT_BOOL_VALUE = true;
     public const STRING_BOOL_VALUE = 'true';
-    public const BOOL_VALUE = true;
+    protected const PARENT_CONST = false;
+    protected const BOOL_VALUE = true;
     public const ASSOC_ARRAY_VALUE = [
         'key_1' => 'key_1_value',
         'key_2' => 'key_2_value',
