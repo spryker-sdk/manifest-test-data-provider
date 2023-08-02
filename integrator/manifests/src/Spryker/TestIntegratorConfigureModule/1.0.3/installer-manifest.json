@@ -252,6 +252,11 @@
         {
             "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::returnConstantCase3",
             "value": { "value": "return PHP_EOL", "is_literal":  true }
+        },
+        {
+            "previousValue": "",
+            "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::getStoreSynchronizationPoolName",
+            "value": "\\Pyz\\Zed\\Synchronization\\SynchronizationConfig::DEFAULT_SYNCHRONIZATION_POOL_NAME"
         }
     ]
 }

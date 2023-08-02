@@ -10,4 +10,10 @@ namespace Pyz\Zed\TestIntegratorDefault;
 class BaseConfig
 {
     protected const BOOL_VALUE = true;
+
+    public function getStoreSynchronizationPoolName() : ?string
+    {
+        return null;
+    }
+
 }
