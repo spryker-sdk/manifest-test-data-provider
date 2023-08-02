@@ -7,6 +7,9 @@
 
 namespace Pyz\Zed\TestIntegratorWireConsoleCommands;
 
+use ArrayObject;
+use Pyz\Zed\DependencyCollectionTest\DataImportConsole;
+use Pyz\Zed\DataImport\DataImportConfig;
 use Spryker\Zed\Kernel\Container;
 use Spryker\Zed\Monitoring\Communication\Plugin\Console\MonitoringConsolePlugin;
 use Spryker\Zed\Propel\Communication\Plugin\Application\PropelApplicationPlugin;
@@ -21,6 +24,7 @@ class ConsoleDependencyProvider extends ParentConsoleDependencyProvider
     {
         $commands = [
             new DataImportConsole(),
+            new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_STORE),
         ];
         $commands[] = new TestPlainConsole();
 
@@ -49,5 +53,10 @@ class ConsoleDependencyProvider extends ParentConsoleDependencyProvider
         return [
             new MonitoringConsolePlugin(),
         ];
+    }
+
+    public function getEvents(Container $container): array
+    {
+        return new ArrayObject();
     }
 }

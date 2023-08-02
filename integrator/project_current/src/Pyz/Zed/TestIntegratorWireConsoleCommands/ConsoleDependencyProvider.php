@@ -7,12 +7,14 @@
 
 namespace Pyz\Zed\TestIntegratorWireConsoleCommands;
 
+use ArrayObject;
 use Pyz\Zed\DataImport\DataImportConfig;
 use Pyz\Zed\DependencyCollectionTest\DataImportConsole;
 use Spryker\Zed\Kernel\Container;
 use Spryker\Zed\Locale\Communication\Plugin\Application\ConsoleLocaleApplicationPlugin;
 use Spryker\Zed\Monitoring\Communication\Plugin\Console\MonitoringConsolePlugin;
 use Spryker\Zed\Propel\Communication\Plugin\Application\PropelApplicationPlugin;
+use Spryker\Zed\TestIntegratorUnwireConsoleCommands\Console\TestConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestClassExistsConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestDevConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestNewConsole;
@@ -26,7 +28,10 @@ class ConsoleDependencyProvider extends ParentConsoleDependencyProvider
     protected function getConsoleCommands(Container $container): array
     {
         $commands = [
-            new DataImportConsole(), new TestNewConsole(), new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_STORE), new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_CURRENCY),
+            new DataImportConsole(),
+            new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_STORE),
+            new TestNewConsole(),
+            new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_CURRENCY),
         ];
         $commands[] = new TestPlainConsole();
 
@@ -60,5 +65,10 @@ class ConsoleDependencyProvider extends ParentConsoleDependencyProvider
         return [
             new MonitoringConsolePlugin(),
         ];
+    }
+
+    public function getEvents(Container $container): array
+    {
+        return new ArrayObject();
     }
 }
