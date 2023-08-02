@@ -20,11 +20,7 @@ class ConsoleDependencyProvider
 {
     protected function getConsoleCommands(Container $container): array
     {
-        $commands = [
-            new TestNewConsole(),
-            new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_STORE),
-            new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_CURRENCY),
-        ];
+        $commands = [];
         $commands[] = new TestPlainConsole();
 
         if ($this->getConfig()->isDevelopmentConsoleCommandsEnabled()) {
@@ -34,9 +30,12 @@ class ConsoleDependencyProvider
                 $commands[] = new TestClassExistsConsole();
             }
         }
+        $commands[] = new TestNewConsole();
         if (class_exists(TestNewConsoleWithMissingCondition::class)) {
             $commands[] = new TestNewConsoleWithMissingCondition();
         }
+        $commands[] = new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_STORE);
+        $commands[] = new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_CURRENCY);
 
         return $commands;
     }
