@@ -252,6 +252,22 @@
         {
             "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::returnConstantCase3",
             "value": { "value": "return PHP_EOL", "is_literal":  true }
+        },
+        {
+            "previousValue": "",
+            "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::getAllowedLanguages",
+            "value": {
+                "value": "return (new \\SprykerShop\\Zed\\Kernel\\Container())->getLocator()->locale()->client()->getAllowedLanguages()",
+                "is_literal": true
+            }
+        },
+        {
+            "previousValue": "",
+            "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::getNumber",
+            "value": {
+                "value": 10,
+                "is_literal": true
+            }
         }
     ]
 }

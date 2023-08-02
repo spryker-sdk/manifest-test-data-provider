@@ -10,6 +10,7 @@ namespace Pyz\Yves\CartPage;
 use App\Manifest\Generator\ArrayConfigElementManifestStrategy;
 use Generated\Shared\Transfer\ProductConfigurationInstanceTransfer;
 use SprykerShop\Yves\CartPage\CartPageConfig as SprykerCartPageConfig;
+use SprykerShop\Zed\Kernel\Container;
 
 class CartPageConfig extends SprykerCartPageConfig
 {
@@ -399,5 +400,13 @@ class CartPageConfig extends SprykerCartPageConfig
     public function returnConstant(): string
     {
         return PHP_EOL;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAllowedLanguages(): array
+    {
+        return (new Container())->getLocator()->locale()->client()->getAllowedLanguages();
     }
 }
