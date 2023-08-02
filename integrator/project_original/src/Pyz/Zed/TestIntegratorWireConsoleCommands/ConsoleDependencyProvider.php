@@ -8,6 +8,7 @@
 namespace Pyz\Zed\TestIntegratorWireConsoleCommands;
 
 use Spryker\Zed\Kernel\Container;
+use Spryker\Zed\Monitoring\Communication\Plugin\Console\MonitoringConsolePlugin;
 use Spryker\Zed\Propel\Communication\Plugin\Application\PropelApplicationPlugin;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestPlainConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestDevConsole;
@@ -39,5 +40,12 @@ class ConsoleDependencyProvider extends ParentConsoleDependencyProvider
         $applicationPlugins[] = new TwigApplicationPlugin();
 
         return $applicationPlugins;
+    }
+
+    public function getEventSubscriber(Container $container): array
+    {
+        return [
+            new MonitoringConsolePlugin(),
+        ];
     }
 }
