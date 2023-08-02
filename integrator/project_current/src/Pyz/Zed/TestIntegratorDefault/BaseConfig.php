@@ -11,6 +11,24 @@ class BaseConfig
 {
     protected const BOOL_VALUE = true;
 
+    /**
+     * @return array<string>
+     */
+    public function getAllowedLanguages() : array
+    {
+        return [
+            'de',
+        ];
+    }
+
+    /**
+     * @return int
+     */
+    protected function getNumber() : int
+    {
+        return 10;
+    }
+
     public function getStoreSynchronizationPoolName() : ?string
     {
         return null;

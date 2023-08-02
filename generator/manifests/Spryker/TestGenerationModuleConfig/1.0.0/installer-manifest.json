@@ -84,7 +84,7 @@
                 "previousValue": "",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod12",
                 "value": {
-                    "value": "$paymentMethodStatemachineMapping = $this->getPaymentMethodStatemachineMapping(); if (!array_key_exists($getPayment->getPaymentSelection(), $paymentMethodStatemachineMapping)) { parent::determineProcessForOrderItem($quoteTransfer, $itemTransfer) } return $paymentMethodStatemachineMapping[$getPayment->getPaymentSelection()]",
+                    "value": "$paymentMethodStatemachineMapping = $this->getPaymentMethodStatemachineMapping(); if (!array_key_exists($quoteTransfer->getPayment()->getPaymentSelection(), $paymentMethodStatemachineMapping)) { parent::determineProcessForOrderItem($quoteTransfer, $itemTransfer) } return $paymentMethodStatemachineMapping[$quoteTransfer->getPayment()->getPaymentSelection()]",
                     "is_literal": true
                 }
             },
@@ -227,6 +227,14 @@
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::returnConstant",
                 "value": {
                     "value": "return PHP_EOL",
+                    "is_literal": true
+                }
+            },
+            {
+                "previousValue": "",
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::getAllowedLanguages",
+                "value": {
+                    "value": "return (new \\SprykerShop\\Zed\\Kernel\\Container())->getLocator()->locale()->client()->getAllowedLanguages()",
                     "is_literal": true
                 }
             },

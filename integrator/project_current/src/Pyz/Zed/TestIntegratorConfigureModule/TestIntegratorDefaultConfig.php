@@ -347,6 +347,20 @@ class TestIntegratorDefaultConfig extends BaseConfig
         return PHP_EOL;
     }
     /**
+     * @return string[]
+     */
+    public function getAllowedLanguages() : array
+    {
+        return (new \SprykerShop\Zed\Kernel\Container())->getLocator()->locale()->client()->getAllowedLanguages();
+    }
+    /**
+     * @return int
+     */
+    protected function getNumber() : int
+    {
+        return 10;
+    }
+    /**
      * @return string
      */
     public function getStoreSynchronizationPoolName() : ?string
