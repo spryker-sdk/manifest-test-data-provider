@@ -9,18 +9,26 @@ namespace Pyz\Zed\TestIntegratorWireConsoleCommands;
 
 use Pyz\Zed\DataImport\DataImportConfig;
 use Pyz\Zed\DependencyCollectionTest\DataImportConsole;
+use Spryker\Zed\Kernel\Container;
+use Spryker\Zed\Locale\Communication\Plugin\Application\ConsoleLocaleApplicationPlugin;
+use Spryker\Zed\Propel\Communication\Plugin\Application\PropelApplicationPlugin;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestClassExistsConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestDevConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestNewConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestNewConsoleWithCondition;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestNewConsoleWithMissingCondition;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestPlainConsole;
+use Spryker\Zed\Twig\Communication\Plugin\Application\TwigApplicationPlugin;
 
-class ConsoleDependencyProvider
+class ConsoleDependencyProvider extends ParentConsoleDependencyProvider
 {
     protected function getConsoleCommands(Container $container): array
     {
-        $commands = [];
+        $commands = [
+            new TestNewConsole(),
+            new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_STORE),
+            new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_CURRENCY),
+        ];
         $commands[] = new TestPlainConsole();
 
         if ($this->getConfig()->isDevelopmentConsoleCommandsEnabled()) {
@@ -30,13 +38,21 @@ class ConsoleDependencyProvider
                 $commands[] = new TestClassExistsConsole();
             }
         }
-        $commands[] = new TestNewConsole();
         if (class_exists(TestNewConsoleWithMissingCondition::class)) {
             $commands[] = new TestNewConsoleWithMissingCondition();
         }
-        $commands[] = new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_STORE);
-        $commands[] = new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_CURRENCY);
 
         return $commands;
+    }
+
+    public function getApplicationPlugins(Container $container): array
+    {
+        $applicationPlugins = parent::getApplicationPlugins($container);
+
+        $applicationPlugins[] = new PropelApplicationPlugin();
+        $applicationPlugins[] = new TwigApplicationPlugin();
+        $applicationPlugins[] = new ConsoleLocaleApplicationPlugin();
+
+        return $applicationPlugins;
     }
 }

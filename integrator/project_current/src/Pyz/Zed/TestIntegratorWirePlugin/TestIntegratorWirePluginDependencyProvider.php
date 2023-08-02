@@ -51,13 +51,14 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
 
     public function getConditionPlugins(): array
     {
-        $plugins = [];
+        $plugins = [
+            new CustomerUnsubscribePlugin([
+                NewsletterConstants::DEFAULT_NEWSLETTER_TYPE,
+            ]),
+        ];
         if (class_exists(WebProfilerApplicationPlugin::class)) {
             $plugins[] = new WebProfilerApplicationPlugin();
         }
-        $plugins[] = new CustomerUnsubscribePlugin([
-            NewsletterConstants::DEFAULT_NEWSLETTER_TYPE,
-        ]);
 
         return $plugins;
     }

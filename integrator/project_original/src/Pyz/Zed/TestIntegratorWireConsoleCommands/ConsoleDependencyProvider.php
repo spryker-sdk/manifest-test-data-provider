@@ -7,11 +7,14 @@
 
 namespace Pyz\Zed\TestIntegratorWireConsoleCommands;
 
+use Spryker\Zed\Kernel\Container;
+use Spryker\Zed\Propel\Communication\Plugin\Application\PropelApplicationPlugin;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestPlainConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestDevConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestClassExistsConsole;
+use Spryker\Zed\Twig\Communication\Plugin\Application\TwigApplicationPlugin;
 
-class ConsoleDependencyProvider
+class ConsoleDependencyProvider extends ParentConsoleDependencyProvider
 {
     protected function getConsoleCommands(Container $container): array
     {
@@ -26,5 +29,15 @@ class ConsoleDependencyProvider
         }
 
         return $commands;
+    }
+
+    public function getApplicationPlugins(Container $container): array
+    {
+        $applicationPlugins = parent::getApplicationPlugins($container);
+
+        $applicationPlugins[] = new PropelApplicationPlugin();
+        $applicationPlugins[] = new TwigApplicationPlugin();
+
+        return $applicationPlugins;
     }
 }
