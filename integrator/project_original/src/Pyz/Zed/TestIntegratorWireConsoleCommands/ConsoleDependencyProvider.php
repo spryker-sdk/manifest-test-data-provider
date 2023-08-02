@@ -19,7 +19,9 @@ class ConsoleDependencyProvider extends ParentConsoleDependencyProvider
 {
     protected function getConsoleCommands(Container $container): array
     {
-        $commands = [];
+        $commands = [
+            new DataImportConsole(),
+        ];
         $commands[] = new TestPlainConsole();
 
         if ($this->getConfig()->isDevelopmentConsoleCommandsEnabled()) {

@@ -26,9 +26,7 @@ class ConsoleDependencyProvider extends ParentConsoleDependencyProvider
     protected function getConsoleCommands(Container $container): array
     {
         $commands = [
-            new TestNewConsole(),
-            new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_STORE),
-            new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_CURRENCY),
+            new DataImportConsole(), new TestNewConsole(), new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_STORE), new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_CURRENCY),
         ];
         $commands[] = new TestPlainConsole();
 
