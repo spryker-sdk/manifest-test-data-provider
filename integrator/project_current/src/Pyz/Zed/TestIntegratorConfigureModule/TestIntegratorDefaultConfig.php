@@ -362,4 +362,18 @@ class TestIntegratorDefaultConfig extends BaseConfig
         return [
         ];
     }
+    /**
+     * @return string[]
+     */
+    public function getAllowedLanguages() : array
+    {
+        return (new \SprykerShop\Zed\Kernel\Container())->getLocator()->locale()->client()->getAllowedLanguages();
+    }
+    /**
+     * @return int
+     */
+    protected function getNumber() : int
+    {
+        return 10;
+    }
 }

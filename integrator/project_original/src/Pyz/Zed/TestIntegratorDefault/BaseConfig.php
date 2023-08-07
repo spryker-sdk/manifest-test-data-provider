@@ -10,4 +10,22 @@ namespace Pyz\Zed\TestIntegratorDefault;
 class BaseConfig extends AbstractConfig
 {
     protected const BOOL_VALUE = true;
+
+    /**
+     * @return string[]
+     */
+    public function getAllowedLanguages() : array
+    {
+        return [
+            'de',
+        ];
+    }
+    
+    /**
+     * @return int
+     */
+    protected function getNumber() : int
+    {
+        return 10;
+    }
 }
