@@ -28,4 +28,10 @@ class BaseConfig
     {
         return 10;
     }
+
+    public function getStoreSynchronizationPoolName() : ?string
+    {
+        return null;
+    }
+
 }

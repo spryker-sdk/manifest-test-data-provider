@@ -37,6 +37,14 @@
                     }
                 ]
             }
+        },
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorWireConsoleCommands\\ConsoleDependencyProvider::getApplicationPlugins",
+            "source": "\\Spryker\\Zed\\Locale\\Communication\\Plugin\\Application\\ConsoleLocaleApplicationPlugin"
+        },
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorWireConsoleCommands\\ConsoleDependencyProvider::getEvents",
+            "source": "\\Spryker\\Zed\\TestIntegratorUnwireConsoleCommands\\Console\\TestConsole"
         }
     ]
 }

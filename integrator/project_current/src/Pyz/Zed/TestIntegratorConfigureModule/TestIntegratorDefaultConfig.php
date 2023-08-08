@@ -10,6 +10,7 @@ namespace Pyz\Zed\TestIntegratorDefault;
 use App\Manifest\Generator\ArrayConfigElementManifestStrategy;
 use App\Manifest\Generator\ArrayConfigElementManifestStrategy2;
 use App\Manifest\Generator\ArrayConfigElementManifestStrategyTest;
+use Pyz\Zed\Synchronization\SynchronizationConfig;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SinglePlugin;
 
 class TestIntegratorDefaultConfig extends BaseConfig
@@ -358,5 +359,12 @@ class TestIntegratorDefaultConfig extends BaseConfig
     protected function getNumber() : int
     {
         return 10;
+    }
+    /**
+     * @return string
+     */
+    public function getStoreSynchronizationPoolName() : ?string
+    {
+        return SynchronizationConfig::DEFAULT_SYNCHRONIZATION_POOL_NAME;
     }
 }
