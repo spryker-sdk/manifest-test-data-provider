@@ -190,4 +190,12 @@ class TestIntegratorDefaultConfig extends BaseConfig
             ],
         ];
     }
+
+    /**
+     * @return array<mixed>
+     */
+    public function returnEmptyValueWithPreviousDefined(): array
+    {
+        return [100, 'text'];
+    }
 }

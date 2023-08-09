@@ -38,6 +38,10 @@
             "value": { "value":  "true", "is_literal":  true }
         },
         {
+            "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::PARENT_CONST",
+            "value": { "value":  "false", "is_literal":  true }
+        },
+        {
             "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::STRING_BOOL_VALUE",
             "value": "true"
         },
@@ -252,6 +256,14 @@
         {
             "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::returnConstantCase3",
             "value": { "value": "return PHP_EOL", "is_literal":  true }
+        },
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::returnEmptyValue",
+            "value": []
+        },
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::returnEmptyValueWithPreviousDefined",
+            "value": []
         },
         {
             "previousValue": "",
