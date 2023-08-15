@@ -18,7 +18,8 @@ class TestIntegratorDefaultConfig extends BaseConfig
     public const OTHER_CONSTANT = PHP_EOL;
     public const STRAIGHT_BOOL_VALUE = true;
     public const STRING_BOOL_VALUE = 'true';
-    public const BOOL_VALUE = true;
+    protected const PARENT_CONST = false;
+    protected const BOOL_VALUE = true;
     public const ASSOC_ARRAY_VALUE = [
         'key_1' => 'key_1_value',
         'key_2' => 'key_2_value',
@@ -223,6 +224,14 @@ class TestIntegratorDefaultConfig extends BaseConfig
             ],
         ];
     }
+
+    /**
+     * @return array<mixed>
+     */
+    public function returnEmptyValueWithPreviousDefined(): array
+    {
+        return [100, 'text'];
+    }
     /**
      * @return bool
      */
@@ -345,6 +354,14 @@ class TestIntegratorDefaultConfig extends BaseConfig
     public function returnConstantCase3() : string
     {
         return PHP_EOL;
+    }
+    /**
+     * @return array
+     */
+    public function returnEmptyValue() : array
+    {
+        return [
+        ];
     }
     /**
      * @return string[]
