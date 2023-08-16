@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
+ * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
+ */
+
+declare(strict_types=1);
+
 namespace Pyz\Client\TestIntegratorAddConfigArrayElement;
 
 use Spryker\Client\TestIntegratorAddConfigArrayElement\TestIntegratorAddConfigArrayElementConfig as SprykerTestIntegratorAddConfigArrayElementConfig;
@@ -9,6 +16,9 @@ use Spryker\Shared\TestIntegrator\TestIntegratorAddConfigArrayElementBefore;
 
 class TestIntegratorAddConfigArrayElementConfig extends SprykerTestIntegratorAddConfigArrayElementConfig
 {
+    /**
+     * @var string
+     */
     public const TEST_VALUE_CHANGING = 'Some value';
 
     protected function getTestConfiguration(): array
@@ -31,7 +41,8 @@ class TestIntegratorAddConfigArrayElementConfig extends SprykerTestIntegratorAdd
             TestIntegratorAddConfigArrayElement::TEST_INTEGRATION_ADD_CONFIG_ARRAY_ELEMENT_CONST,
         ]);
     }
-    protected function getNotExistOnProjectLevelTestConfiguration() : array
+
+    protected function getNotExistOnProjectLevelTestConfiguration(): array
     {
         return [
             TestIntegratorAddConfigArrayElement::TEST_INTEGRATION_ADD_CONFIG_ARRAY_ELEMENT_CONST,

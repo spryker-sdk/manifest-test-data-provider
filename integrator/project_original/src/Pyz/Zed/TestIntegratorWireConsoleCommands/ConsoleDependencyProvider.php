@@ -5,17 +5,19 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
+declare(strict_types=1);
+
 namespace Pyz\Zed\TestIntegratorWireConsoleCommands;
 
 use ArrayObject;
-use Pyz\Zed\DependencyCollectionTest\DataImportConsole;
 use Pyz\Zed\DataImport\DataImportConfig;
+use Pyz\Zed\DependencyCollectionTest\DataImportConsole;
 use Spryker\Zed\Kernel\Container;
 use Spryker\Zed\Monitoring\Communication\Plugin\Console\MonitoringConsolePlugin;
 use Spryker\Zed\Propel\Communication\Plugin\Application\PropelApplicationPlugin;
-use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestPlainConsole;
-use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestDevConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestClassExistsConsole;
+use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestDevConsole;
+use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestPlainConsole;
 use Spryker\Zed\Twig\Communication\Plugin\Application\TwigApplicationPlugin;
 
 class ConsoleDependencyProvider extends ParentConsoleDependencyProvider

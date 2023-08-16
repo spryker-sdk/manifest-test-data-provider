@@ -5,22 +5,24 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
+declare(strict_types=1);
+
 namespace Pyz\Zed\TestIntegratorUnwirePlugin;
 
 use Pyz\Shared\Scheduler\SchedulerConfig;
+use Spryker\Zed\SchedulerJenkins\Communication\Plugin\Adapter\SchedulerJenkinsAdapterPlugin;
 use Spryker\Zed\TestIntegratorDefault\Communication\Plugin\TestIntegratorDefault1Plugin;
 use Spryker\Zed\TestIntegratorDefault\Communication\Plugin\TestIntegratorDefault2Plugin;
-use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\CustomerUnsubscribePlugin;
-use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\NewsletterConstants;
-use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\TestIntegratorUnwirePlugin;
-use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\TestFooConditionPlugin;
-use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\TestBarConditionPlugin;
-use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\UrlStorageEventSubscriber;
-use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\FooStorageEventSubscriber;
 use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\AvailabilityStorageEventSubscriber;
-use Spryker\Zed\SchedulerJenkins\Communication\Plugin\Adapter\SchedulerJenkinsAdapterPlugin;
-use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\WebProfilerApplicationPlugin;
+use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\CustomerUnsubscribePlugin;
+use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\FooStorageEventSubscriber;
+use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\NewsletterConstants;
+use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\TestBarConditionPlugin;
+use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\TestFooConditionPlugin;
+use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\TestIntegratorUnwirePlugin;
 use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\TestIntegratorWirePlugin;
+use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\UrlStorageEventSubscriber;
+use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\WebProfilerApplicationPlugin;
 
 class TestIntegratorUnwirePluginDependencyProvider extends ParentTestIntegratorUnwirePluginDependencyProvider
 {
@@ -131,7 +133,7 @@ class TestIntegratorUnwirePluginDependencyProvider extends ParentTestIntegratorU
                 new SchedulerJenkinsAdapterPlugin(),
                 new TestIntegratorDefault2Plugin(),
             ],
-            new TestIntegratorDefault2Plugin()
+            new TestIntegratorDefault2Plugin(),
         ];
     }
 }
