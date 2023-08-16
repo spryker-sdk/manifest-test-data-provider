@@ -300,6 +300,10 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
             new FirstPlugin(),
         ];
     }
+    public function getSinglePluginInterface() : \Pyz\Zed\TestIntegratorWirePlugin\SingleWirePluginInterface
+    {
+        return new TestIntegratorSingleWirePlugin();
+    }
     public function getConditionParentPlugins() : array
     {
         $plugins = [
