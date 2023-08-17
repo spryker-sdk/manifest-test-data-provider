@@ -212,18 +212,6 @@
                         }
                     ]
                 }
-            },
-            {
-                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getConsoleCommands",
-                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\DataImportConsole",
-                "arguments": {
-                    "constructor-arguments": [
-                        {
-                            "value": "\\Pyz\\Zed\\DataImport\\DataImportConfig::ANY_NAME . ':' . \\Pyz\\Zed\\DataImport\\DataImportConfig::IMPORT_TYPE_CURRENCY",
-                            "is_literal": true
-                        }
-                    ]
-                }
             }
         ]
     },
@@ -242,6 +230,22 @@
                 "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getProcessorMessagePlugins",
                 "source": "\\Spryker\\Zed\\Synchronization\\Communication\\Plugin\\Queue\\SynchronizationStorageQueueMessageProcessorPlugin",
                 "index": "\\Spryker\\Shared\\CustomerStorage\\CustomerStorageConfig::CUSTOMER_INVALIDATED_SYNC_STORAGE_QUEUE"
+            }
+        ]
+    },
+    "Pyz.DataImportCurrency": {
+        "wire-plugin": [
+            {
+                "target": "\\Spryker\\Zed\\DependencyTest\\WireQueueDependencyProvider::getConsoleCommands",
+                "source": "\\Pyz\\Zed\\DependencyCollectionTest\\DataImportConsole",
+                "arguments": {
+                    "constructor-arguments": [
+                        {
+                            "value": "\\Pyz\\Zed\\DataImport\\DataImportConfig::ANY_NAME . ':' . \\Pyz\\Zed\\DataImportCurrency\\DataImportCurrencyConfig::IMPORT_TYPE_CURRENCY",
+                            "is_literal": true
+                        }
+                    ]
+                }
             }
         ]
     }

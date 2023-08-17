@@ -10,6 +10,7 @@ use Spryker\Shared\CustomerStorage\CustomerStorageConfig;
 use Spryker\Zed\DependencyTest\WireQueueDependencyProvider as SprykerWireDependencyProvider;
 use Spryker\Zed\SchedulerJenkins\Communication\Plugin\Adapter\SchedulerJenkinsAdapterPlugin;
 use Spryker\Zed\Synchronization\Communication\Plugin\Queue\SynchronizationStorageQueueMessageProcessorPlugin;
+use Pyz\Zed\DataImportCurrency\DataImportCurrencyConfig;
 
 class WireQueueDependencyProvider extends SprykerWireDependencyProvider
 {
@@ -370,7 +371,7 @@ class WireQueueDependencyProvider extends SprykerWireDependencyProvider
             new CacheWarmerConsole(),
             new BuildNavigationConsole(new PluginParam()),
             new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_STORE),
-            new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportConfig::IMPORT_TYPE_CURRENCY),
+            new DataImportConsole(DataImportConfig::ANY_NAME . ':' . DataImportCurrencyConfig::IMPORT_TYPE_CURRENCY),
         ];
 
         return $commands;

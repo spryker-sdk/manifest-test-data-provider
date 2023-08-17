@@ -3,3 +3,5 @@ test_glossary.shipping.test_key_existing,existing value,en_US
 test_glossary.shipping.test_key_existing,existing value,de_DE
 test_glossary.shipping.test_key_new,+ Versand,de_DE
 test_glossary.shipping.test_key_new,"+, Shipping",en_US
+test_gloss.shipping.test_key_new,+ Tes,de_DE
+test_gloss.shipping.test_key_new,"+, Test",en_US
