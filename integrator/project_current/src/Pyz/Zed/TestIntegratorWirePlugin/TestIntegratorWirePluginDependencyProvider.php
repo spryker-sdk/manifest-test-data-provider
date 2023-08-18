@@ -312,6 +312,11 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
         ];
     }
 
+    public function getSinglePluginInterface(): SingleWirePluginInterface
+    {
+        return new TestIntegratorSingleWirePlugin();
+    }
+
     public function getConditionParentPlugins(): array
     {
         $plugins = [

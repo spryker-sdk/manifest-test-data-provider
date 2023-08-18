@@ -4,6 +4,10 @@
             "test_glossary.shipping.test_key_new": {
                 "de_DE": "+ Versand",
                 "en_US": "+, Shipping"
+            },
+            "test_gloss.shipping.test_key_new": {
+                "de_DE": "+ Tes",
+                "en_US": "+, Test"
             }
         }
     }
