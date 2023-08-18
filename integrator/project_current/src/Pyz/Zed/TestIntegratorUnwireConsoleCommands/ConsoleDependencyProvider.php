@@ -5,14 +5,12 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
+declare(strict_types=1);
+
 namespace Pyz\Zed\TestIntegratorUnwireConsoleCommands;
 
-use Pyz\Zed\DependencyCollectionTest\DataImportConsole;
 use Pyz\Zed\DataImport\DataImportConfig;
-use Spryker\Zed\TestIntegratorUnwireConsoleCommands\Console\TestPlainConsole;
-use Spryker\Zed\TestIntegratorUnwireConsoleCommands\Console\TestConsole;
-use Spryker\Zed\TestIntegratorUnwireConsoleCommands\Console\TestDevConsole;
-use Spryker\Zed\TestIntegratorUnwireConsoleCommands\Console\TestClassExistsConsole;
+use Pyz\Zed\DependencyCollectionTest\DataImportConsole;
 
 class ConsoleDependencyProvider
 {

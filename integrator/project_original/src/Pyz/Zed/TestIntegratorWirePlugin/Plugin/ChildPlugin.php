@@ -11,5 +11,4 @@ namespace Pyz\Zed\TestIntegratorWirePlugin\Plugin;
 
 class ChildPlugin extends ParentPlugin
 {
-
 }
