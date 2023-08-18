@@ -7,6 +7,8 @@
 
 namespace Pyz\Zed\TestIntegratorWirePlugin;
 
+use Spryker\Zed\TestIntegratorWirePlugin\Expander\ContextExpanderCollectionInterface;
+use Spryker\Glue\GlueStorefrontApiApplication\Plugin\DocumentationGeneratorApi\StorefrontResourcesContextExpanderPlugin;
 use Spryker\Shared\Config\Config;
 use Spryker\Shared\Log\LogConstants;
 use Pyz\Zed\TestIntegratorWirePlugin\Plugin\ChildPlugin;
@@ -199,11 +201,18 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
             'indexDefault' => $this->getWrappedFunctionWithIndexA(),
         ];
     }
-
+    
     public function getWrappedFunctionWithIndexA() : array
     {
         return [
             new Plugin1(),
         ];
+    }
+    
+    protected function getContextExpanderPlugins(ContextExpanderCollectionInterface $contextExpanderCollection): ContextExpanderCollectionInterface
+    {
+        $contextExpanderCollection->addApplication(new StorefrontResourcesContextExpanderPlugin(), [static::GLUE_STOREFRONT_API_APPLICATION_NAME]);
+        
+        return $contextExpanderCollection;
     }
 }

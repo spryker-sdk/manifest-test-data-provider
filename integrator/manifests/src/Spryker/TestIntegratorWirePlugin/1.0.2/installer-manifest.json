@@ -359,6 +359,32 @@
                 "target": "\\Pyz\\Zed\\TestIntegratorWirePlugin\\TestIntegratorWirePluginDependencyProvider::getWrappedFunctionsWithIndex",
                 "index": "indexKey"
             }
+        },
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorWirePlugin\\TestIntegratorWirePluginDependencyProvider::getContextExpanderPlugins",
+            "source": "\\Spryker\\Zed\\TestIntegratorWirePlugin\\Expander\\RelationshipPluginsContextExpanderPlugin",
+            "arguments": {
+                "append-arguments": [
+                    {
+                        "value": [
+                            "static::GLUE_BACKEND_API_APPLICATION_NAME"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorWirePlugin\\TestIntegratorWirePluginDependencyProvider::getContextExpanderPlugins",
+            "source": "\\Spryker\\Zed\\TestIntegratorWirePlugin\\Expander\\RelationshipPluginPlugin",
+            "arguments": {
+                "append-arguments": [
+                    {
+                        "value": [
+                            "static::GLUE_BACKEND_API_APPLICATION_NAME"
+                        ]
+                    }
+                ]
+            }
         }
     ]
 }
