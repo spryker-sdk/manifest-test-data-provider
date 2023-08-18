@@ -9,6 +9,11 @@ namespace Pyz\Zed\TestIntegratorWirePlugin;
 
 class TestParentIntegratorWirePluginDependencyProvider
 {
+    public function getSinglePluginInterface(): SingleWirePluginInterface
+    {
+        throw new Exception('Plugin is required');
+    }
+
     public function getConditionParentPlugins(): array
     {
         return [];
