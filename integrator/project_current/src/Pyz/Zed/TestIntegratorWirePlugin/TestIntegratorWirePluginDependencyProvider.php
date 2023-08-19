@@ -299,6 +299,16 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
         return $contextExpanderCollection;
     }
 
+    protected function getWithoutReturnTypePlugins(ContextExpanderCollectionInterface $contextExpanderCollection)
+    {
+        $contextExpanderCollection->addApplication(new StorefrontResourcesContextExpanderPlugin(), [static::GLUE_STOREFRONT_API_APPLICATION_NAME]);
+        $contextExpanderCollection->addApplication(new RelationshipPluginsContextExpanderPlugin(), [
+            static::GLUE_BACKEND_API_APPLICATION_NAME,
+        ]);
+
+        return $contextExpanderCollection;
+    }
+
     /**
      * @return array
      */

@@ -389,6 +389,19 @@
                     }
                 ]
             }
+        },
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorWirePlugin\\TestIntegratorWirePluginDependencyProvider::getWithoutReturnTypePlugins",
+            "source": "\\Spryker\\Zed\\TestIntegratorWirePlugin\\Expander\\RelationshipPluginsContextExpanderPlugin",
+            "arguments": {
+                "append-arguments": [
+                    {
+                        "value": [
+                            "static::GLUE_BACKEND_API_APPLICATION_NAME"
+                        ]
+                    }
+                ]
+            }
         }
     ]
 }

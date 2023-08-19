@@ -214,11 +214,18 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
             new Plugin1(),
         ];
     }
-    
+
     protected function getContextExpanderPlugins(ContextExpanderCollectionInterface $contextExpanderCollection): ContextExpanderCollectionInterface
     {
         $contextExpanderCollection->addApplication(new StorefrontResourcesContextExpanderPlugin(), [static::GLUE_STOREFRONT_API_APPLICATION_NAME]);
-        
+
+        return $contextExpanderCollection;
+    }
+
+    protected function getWithoutReturnTypePlugins(ContextExpanderCollectionInterface $contextExpanderCollection)
+    {
+        $contextExpanderCollection->addApplication(new StorefrontResourcesContextExpanderPlugin(), [static::GLUE_STOREFRONT_API_APPLICATION_NAME]);
+
         return $contextExpanderCollection;
     }
 }
