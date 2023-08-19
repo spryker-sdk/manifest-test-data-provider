@@ -5,10 +5,17 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
+declare(strict_types=1);
+
 namespace Pyz\Zed\TestIntegratorWirePlugin;
 
 class TestParentIntegratorWirePluginDependencyProvider
 {
+    public function getSinglePluginInterface(): SingleWirePluginInterface
+    {
+        throw new Exception('Plugin is required');
+    }
+
     public function getConditionParentPlugins(): array
     {
         return [];

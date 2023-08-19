@@ -5,6 +5,8 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
+declare(strict_types=1);
+
 namespace Pyz\Zed\TestIntegratorWirePlugin;
 
 use Pyz\Shared\Scheduler\SchedulerConfig;
@@ -28,7 +30,6 @@ use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\NewsletterConstant
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\Plugin1;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\Plugin2;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SecondPlugin;
-use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SinglePlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestAppendArgumentArrayValue;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestBarConditionPlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestFooConditionPlugin;
@@ -226,14 +227,18 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
     protected function getWrappedPlugins(): array
     {
         return array_merge(
-            $this->getWrappedFunctionDefault(), $this->getWrappedFunctionA(), $this->getWrappedFunctionB(), [
+            $this->getWrappedFunctionDefault(),
+            $this->getWrappedFunctionA(),
+            $this->getWrappedFunctionB(),
+            [
                 new TestIntegratorWirePlugin(new PluginParam(), [
                     new PluginParam1(),
                     new PluginParam2(),
                 ]),
-            ]
+            ],
         );
     }
+
     /**
      * @return array
      */
@@ -243,21 +248,24 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
             new FirstPlugin(),
         ];
     }
+
     /**
      * @return array
      */
     protected function getWrappedPluginsWithIndex(): array
     {
         return array_merge(
-            ['indexDefault' => $this->getWrappedFunctionWithIndexD()], [
+            ['indexDefault' => $this->getWrappedFunctionWithIndexD()],
+            [
                 'indexKey' => $this->getWrappedFunctionWithIndexC(),
-            ]
+            ],
         );
     }
+
     /**
      * @return array
      */
-    public function getWrappedFunctionWithIndexD() : array
+    public function getWrappedFunctionWithIndexD(): array
     {
         return [
             new Plugin1(), new FirstPlugin(),
@@ -270,14 +278,14 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
             'indexDefault' => $this->getWrappedFunctionWithIndexA(), 'indexKey' => $this->getWrappedFunctionWithIndexB(),
         ];
     }
-    
-    public function getWrappedFunctionWithIndexA() : array
+
+    public function getWrappedFunctionWithIndexA(): array
     {
         return [
             new Plugin1(), 'key' => new Plugin2(),
         ];
     }
-    
+
     protected function getContextExpanderPlugins(ContextExpanderCollectionInterface $contextExpanderCollection): ContextExpanderCollectionInterface
     {
         $contextExpanderCollection->addApplication(new StorefrontResourcesContextExpanderPlugin(), [static::GLUE_STOREFRONT_API_APPLICATION_NAME]);
@@ -287,76 +295,90 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
         $contextExpanderCollection->addApplication(new RelationshipPluginPlugin(), [
             static::GLUE_BACKEND_API_APPLICATION_NAME,
         ]);
-        
+
         return $contextExpanderCollection;
     }
+
     /**
      * @return array
      */
-    public function getWrappedFunctionB() : array
+    public function getWrappedFunctionB(): array
     {
         return [
             new SecondPlugin(),
         ];
     }
+
     /**
      * @return array
      */
-    public function getWrappedFunctionA() : array
+    public function getWrappedFunctionA(): array
     {
         return [
             new FirstPlugin(),
         ];
     }
+
     /**
      * @return array
      */
-    public function getWrappedFunctionWithIndexC() : array
+    public function getWrappedFunctionWithIndexC(): array
     {
         return [
             new FirstPlugin(),
         ];
     }
-    public function getConditionParentPlugins() : array
+
+    public function getSinglePluginInterface(): SingleWirePluginInterface
+    {
+        return new TestIntegratorSingleWirePlugin();
+    }
+
+    public function getConditionParentPlugins(): array
     {
         $plugins = [
         ];
         if (class_exists(WebProfilerApplicationPlugin::class)) {
             $plugins[] = new WebProfilerApplicationPlugin();
         }
+
         return $plugins;
     }
+
     /**
      * @return array
      */
-    public function getWrappedFunction1() : array
+    public function getWrappedFunction1(): array
     {
         return [
             new Plugin1(),
         ];
     }
+
     /**
      * @return array
      */
-    public function getWrappedFunctionC() : array
+    public function getWrappedFunctionC(): array
     {
         return [
             new Plugin1(),
         ];
     }
+
     /**
      * @return array
      */
-    public function getWrappedFunctionD() : array
+    public function getWrappedFunctionD(): array
     {
         return [
             new Plugin1(),
         ];
     }
+
     /**
      * @return array
      */
-    public function getWrappedFunctionWithIndexB() : array
+    public function getWrappedFunctionWithIndexB(): array
     {
         return [
             new Plugin2(),

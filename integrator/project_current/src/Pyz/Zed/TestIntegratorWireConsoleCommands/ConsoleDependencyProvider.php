@@ -5,6 +5,8 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
+declare(strict_types=1);
+
 namespace Pyz\Zed\TestIntegratorWireConsoleCommands;
 
 use ArrayObject;
@@ -14,7 +16,6 @@ use Spryker\Zed\Kernel\Container;
 use Spryker\Zed\Locale\Communication\Plugin\Application\ConsoleLocaleApplicationPlugin;
 use Spryker\Zed\Monitoring\Communication\Plugin\Console\MonitoringConsolePlugin;
 use Spryker\Zed\Propel\Communication\Plugin\Application\PropelApplicationPlugin;
-use Spryker\Zed\TestIntegratorUnwireConsoleCommands\Console\TestConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestClassExistsConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestDevConsole;
 use Spryker\Zed\TestIntegratorWireConsoleCommands\Console\TestNewConsole;

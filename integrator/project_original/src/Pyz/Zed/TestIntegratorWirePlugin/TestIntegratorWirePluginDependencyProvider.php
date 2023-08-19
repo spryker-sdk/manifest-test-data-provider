@@ -5,24 +5,27 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
+declare(strict_types=1);
+
 namespace Pyz\Zed\TestIntegratorWirePlugin;
 
+use Pyz\Zed\TestIntegratorWirePlugin\Plugin\ChildPlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Expander\ContextExpanderCollectionInterface;
 use Spryker\Glue\GlueStorefrontApiApplication\Plugin\DocumentationGeneratorApi\StorefrontResourcesContextExpanderPlugin;
 use Spryker\Shared\Config\Config;
 use Spryker\Shared\Log\LogConstants;
-use Pyz\Zed\TestIntegratorWirePlugin\Plugin\ChildPlugin;
-use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SinglePlugin;
-use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\FirstPlugin;
-use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SecondPlugin;
-use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestIntegratorWirePlugin;
-use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestIntegratorWirePluginIndex;
-use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\UrlStorageEventSubscriber;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\AvailabilityStorageEventSubscriber;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\FirstPlugin;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\Plugin1;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SecondPlugin;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SinglePlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestFooConditionPlugin;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestIntegratorWirePlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestIntegratorWirePluginExpressionIndex;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestIntegratorWirePluginIndex;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestIntegratorWirePluginStaticIndex;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestIntegratorWirePluginStringIndex;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\UrlStorageEventSubscriber;
 use Spryker\Zed\TestIntegratorWirePlugin\TestIntegratorWirePluginConfig;
 
 class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWirePluginDependencyProvider
@@ -166,9 +169,10 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
     protected function getWrappedPlugins(): array
     {
         return array_merge(
-            $this->getWrappedFunctionDefault()
+            $this->getWrappedFunctionDefault(),
         );
     }
+
     /**
      * @return array
      */
@@ -176,19 +180,21 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
     {
         return [];
     }
+
     /**
      * @return array
      */
     protected function getWrappedPluginsWithIndex(): array
     {
         return array_merge(
-            ['indexDefault' => $this->getWrappedFunctionWithIndexD()]
+            ['indexDefault' => $this->getWrappedFunctionWithIndexD()],
         );
     }
+
     /**
      * @return array
      */
-    public function getWrappedFunctionWithIndexD() : array
+    public function getWrappedFunctionWithIndexD(): array
     {
         return [
             new Plugin1(),
@@ -201,8 +207,8 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
             'indexDefault' => $this->getWrappedFunctionWithIndexA(),
         ];
     }
-    
-    public function getWrappedFunctionWithIndexA() : array
+
+    public function getWrappedFunctionWithIndexA(): array
     {
         return [
             new Plugin1(),

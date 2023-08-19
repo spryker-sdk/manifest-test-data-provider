@@ -5,30 +5,63 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
+declare(strict_types=1);
+
 namespace Pyz\Zed\TestIntegratorDefault;
 
 use App\Manifest\Generator\ArrayConfigElementManifestStrategy;
 use App\Manifest\Generator\ArrayConfigElementManifestStrategy2;
 use App\Manifest\Generator\ArrayConfigElementManifestStrategyTest;
+use Pyz\Yves\CartPage\CartPageConfig;
 use Pyz\Zed\Synchronization\SynchronizationConfig;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SinglePlugin;
+use SprykerShop\Zed\Kernel\Container;
 
 class TestIntegratorDefaultConfig extends BaseConfig
 {
     public const OTHER_CONSTANT = PHP_EOL;
+
+    /**
+     * @var bool
+     */
     public const STRAIGHT_BOOL_VALUE = true;
+
+    /**
+     * @var string
+     */
     public const STRING_BOOL_VALUE = 'true';
+
+    /**
+     * @var bool
+     */
     protected const PARENT_CONST = false;
+
+    /**
+     * @var bool
+     */
     protected const BOOL_VALUE = true;
+
+    /**
+     * @var array
+     */
     public const ASSOC_ARRAY_VALUE = [
         'key_1' => 'key_1_value',
         'key_2' => 'key_2_value',
     ];
+
+    /**
+     * @var array
+     */
     public const ARRAY_VALUE = [
         10,
         1000,
     ];
+
+    /**
+     * @var string
+     */
     public const BOOL_EXISTING_VALUE = 'false';
+
     /**
      * @return string
      */
@@ -97,16 +130,16 @@ class TestIntegratorDefaultConfig extends BaseConfig
     {
         $array = parent::isCartCartItemsViaAjaxLoadEnabledChanged();
         $array = array_merge($array, [
-            \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_VALUE,
-            \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_VALUE2,
+            ArrayConfigElementManifestStrategy::TEST_VALUE,
+            ArrayConfigElementManifestStrategy::TEST_VALUE2,
         ]);
 
         return array_merge($array, [
-            \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_VALUE => [
-                \App\Manifest\Generator\ArrayConfigElementManifestStrategy::MANIFEST_KEY,
+            ArrayConfigElementManifestStrategy::TEST_VALUE => [
+                ArrayConfigElementManifestStrategy::MANIFEST_KEY,
             ],
-            \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_VALUE2 => [
-                \App\Manifest\Generator\ArrayConfigElementManifestStrategy::MANIFEST_KEY22,
+            ArrayConfigElementManifestStrategy::TEST_VALUE2 => [
+                ArrayConfigElementManifestStrategy::MANIFEST_KEY22,
             ],
         ]);
     }
@@ -120,7 +153,7 @@ class TestIntegratorDefaultConfig extends BaseConfig
             parent::isCartCartItemsViaAjaxLoadEnabled(),
             [
                 static::BOOL_VALUE, ArrayConfigElementManifestStrategy::TEST_CHANGE7,
-            ]
+            ],
         );
     }
 
@@ -137,14 +170,14 @@ class TestIntegratorDefaultConfig extends BaseConfig
                 ], ArrayConfigElementManifestStrategy::NEW_VALUE => [
                     ArrayConfigElementManifestStrategy::TEST_NEW_VALUE,
                 ],
-            ]
+            ],
         );
     }
 
     /**
      * @return array
      */
-    public function testChangeMethod9() : array
+    public function testChangeMethod9(): array
     {
         return [
             static::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => false, static::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED_CHANGED => true,
@@ -159,13 +192,13 @@ class TestIntegratorDefaultConfig extends BaseConfig
         return array_merge(
             $array,
             [
-                \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE => [
-                    \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE
+                ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE => [
+                    ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE,
                 ],
-                \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE => [
-                    \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE
-                ]
-            ]
+                ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE => [
+                    ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE,
+                ],
+            ],
         );
     }
 
@@ -232,41 +265,46 @@ class TestIntegratorDefaultConfig extends BaseConfig
     {
         return [100, 'text'];
     }
+
     /**
      * @return bool
      */
-    public function isOldDeterminationForOrderItemProcessEnabled() : bool
+    public function isOldDeterminationForOrderItemProcessEnabled(): bool
     {
         return false;
     }
+
     /**
      * @return array
      */
-    public function testNewMethod() : array
+    public function testNewMethod(): array
     {
         return array_merge(parent::isCartCartItemsViaAjaxLoadEnabled(), [
             'sales' => '/sales/customer/customer-orders',
             'notes' => '/customer-note-gui/index/index',
         ]);
     }
+
     /**
      * @return array
      */
-    public function testNewMethod2() : array
+    public function testNewMethod2(): array
     {
         return array_merge(parent::isCartCartItemsViaAjaxLoadEnabled(), parent::getSharedConfig());
     }
+
     /**
      * @return string
      */
-    public function testNewMethod3() : string
+    public function testNewMethod3(): string
     {
         return ArrayConfigElementManifestStrategyTest::MANIFEST_KEY;
     }
+
     /**
      * @return array
      */
-    public function testNewMethod4() : array
+    public function testNewMethod4(): array
     {
         return [
             ArrayConfigElementManifestStrategy::MANIFEST_KEY,
@@ -274,10 +312,11 @@ class TestIntegratorDefaultConfig extends BaseConfig
             static::TEST_VALUE3,
         ];
     }
+
     /**
      * @return array
      */
-    public function testNewMethod5() : array
+    public function testNewMethod5(): array
     {
         return [
             ArrayConfigElementManifestStrategy::MANIFEST_KEY => ArrayConfigElementManifestStrategy::TEST_VALUE2,
@@ -285,37 +324,41 @@ class TestIntegratorDefaultConfig extends BaseConfig
             static::TEST_VALUE5 => static::TEST_VALUE3,
         ];
     }
+
     /**
      * @return array
      */
-    public function testNewMethod8() : array
+    public function testNewMethod8(): array
     {
         return [
             static::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => false,
         ];
     }
+
     /**
      * @return bool
      */
-    public function testNewMethod9() : bool
+    public function testNewMethod9(): bool
     {
         return false;
     }
+
     /**
      * @return string
      */
-    public function testNewMethod10() : string
+    public function testNewMethod10(): string
     {
         return $this->getSharedConfig($this->testChange(), [
-            \Pyz\Yves\CartPage\CartPageConfig::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => [
-                \Pyz\Yves\CartPage\CartPageConfig::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => 'test',
+            CartPageConfig::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => [
+                CartPageConfig::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => 'test',
             ],
         ]);
     }
+
     /**
      * @return array
      */
-    public function getInstallerUsers() : array
+    public function getInstallerUsers(): array
     {
         return [
             [
@@ -334,53 +377,60 @@ class TestIntegratorDefaultConfig extends BaseConfig
             ],
         ];
     }
+
     /**
      * @return string
      */
-    public function returnConstantCase1() : string
+    public function returnConstantCase1(): string
     {
         return 'PHP_EOL';
     }
+
     /**
      * @return string
      */
-    public function returnConstantCase2() : string
+    public function returnConstantCase2(): string
     {
         return PHP_EOL;
     }
+
     /**
      * @return string
      */
-    public function returnConstantCase3() : string
+    public function returnConstantCase3(): string
     {
         return PHP_EOL;
     }
+
     /**
      * @return array
      */
-    public function returnEmptyValue() : array
+    public function returnEmptyValue(): array
     {
         return [
         ];
     }
+
     /**
      * @return string[]
      */
-    public function getAllowedLanguages() : array
+    public function getAllowedLanguages(): array
     {
-        return (new \SprykerShop\Zed\Kernel\Container())->getLocator()->locale()->client()->getAllowedLanguages();
+        return (new Container())->getLocator()->locale()->client()->getAllowedLanguages();
     }
+
     /**
      * @return int
      */
-    protected function getNumber() : int
+    protected function getNumber(): int
     {
         return 10;
     }
+
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStoreSynchronizationPoolName() : ?string
+    public function getStoreSynchronizationPoolName(): ?string
     {
         return SynchronizationConfig::DEFAULT_SYNCHRONIZATION_POOL_NAME;
     }

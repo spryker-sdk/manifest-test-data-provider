@@ -5,13 +5,20 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
+declare(strict_types=1);
+
 namespace Pyz\Zed\TestIntegratorDefault;
 
+use App\Manifest\Generator\ArrayConfigElementManifestStrategy;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SinglePlugin;
 
 class TestIntegratorDefaultConfig extends BaseConfig
 {
+    /**
+     * @var string
+     */
     public const BOOL_EXISTING_VALUE = 'false';
+
     /**
      * @return string
      */
@@ -81,21 +88,21 @@ class TestIntegratorDefaultConfig extends BaseConfig
         $array = array_merge_recursive(
             $array,
             [
-                \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_VALUE_NOT_CHANGED,
-                \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_VALUE2_NOT_CHANGED
-            ]
+                ArrayConfigElementManifestStrategy::TEST_VALUE_NOT_CHANGED,
+                ArrayConfigElementManifestStrategy::TEST_VALUE2_NOT_CHANGED,
+            ],
         );
 
         return array_merge(
             $array,
             [
-                \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_VALUE_NOT_CHANGED => [
-                    \App\Manifest\Generator\ArrayConfigElementManifestStrategy::MANIFEST_KEY_NOT_CHANGED
+                ArrayConfigElementManifestStrategy::TEST_VALUE_NOT_CHANGED => [
+                    ArrayConfigElementManifestStrategy::MANIFEST_KEY_NOT_CHANGED,
                 ],
-                \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_VALUE2_NOT_CHANGED => [
-                    \App\Manifest\Generator\ArrayConfigElementManifestStrategy::MANIFEST_KEY22_NOT_CHANGED
-                ]
-            ]
+                ArrayConfigElementManifestStrategy::TEST_VALUE2_NOT_CHANGED => [
+                    ArrayConfigElementManifestStrategy::MANIFEST_KEY22_NOT_CHANGED,
+                ],
+            ],
         );
     }
 
@@ -108,7 +115,7 @@ class TestIntegratorDefaultConfig extends BaseConfig
             parent::isCartCartItemsViaAjaxLoadEnabled(),
             [
                 static::BOOL_VALUE,
-            ]
+            ],
         );
     }
 
@@ -123,14 +130,14 @@ class TestIntegratorDefaultConfig extends BaseConfig
                 ArrayConfigElementManifestStrategy::BOOL_VALUE => [
                     ArrayConfigElementManifestStrategy::TEST_EXISTS_VALUE,
                 ],
-            ]
+            ],
         );
     }
 
     /**
      * @return array
      */
-    public function testChangeMethod9() : array
+    public function testChangeMethod9(): array
     {
         return [
             static::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => false,
@@ -145,13 +152,13 @@ class TestIntegratorDefaultConfig extends BaseConfig
         return array_merge(
             $array,
             [
-                \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE => [
-                    \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE
+                ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE => [
+                    ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE,
                 ],
-                \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE => [
-                    \App\Manifest\Generator\ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE
-                ]
-            ]
+                ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE => [
+                    ArrayConfigElementManifestStrategy::TEST_NOT_CHANGE,
+                ],
+            ],
         );
     }
 
