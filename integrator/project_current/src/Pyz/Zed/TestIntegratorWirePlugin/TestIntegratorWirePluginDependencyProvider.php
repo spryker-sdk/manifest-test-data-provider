@@ -14,6 +14,7 @@ use Pyz\Zed\CustomNamespace\PluginParam;
 use Pyz\Zed\CustomNamespace\PluginParam1;
 use Pyz\Zed\CustomNamespace\PluginParam2;
 use Pyz\Zed\TestIntegratorWirePlugin\Plugin\ChildPlugin;
+use Spryker\Glue\GlueStorefrontApiApplication\Plugin\DocumentationGeneratorApi\StorefrontResourcesContextExpanderPlugin;
 use Spryker\Shared\Config\Config;
 use Spryker\Shared\Log\LogConstants;
 use Spryker\Zed\SchedulerJenkins\Communication\Plugin\Adapter\SchedulerJenkinsAdapterPlugin;
@@ -41,6 +42,9 @@ use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestIntegratorWire
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestIntegratorWirePluginStringIndex;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\UrlStorageEventSubscriber;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\WebProfilerApplicationPlugin;
+use Spryker\Zed\TestIntegratorWirePlugin\Expander\ContextExpanderCollectionInterface;
+use Spryker\Zed\TestIntegratorWirePlugin\Expander\RelationshipPluginPlugin;
+use Spryker\Zed\TestIntegratorWirePlugin\Expander\RelationshipPluginsContextExpanderPlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\TestIntegratorWirePluginConfig;
 
 class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWirePluginDependencyProvider
@@ -280,6 +284,29 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
         return [
             new Plugin1(), 'key' => new Plugin2(),
         ];
+    }
+
+    protected function getContextExpanderPlugins(ContextExpanderCollectionInterface $contextExpanderCollection): ContextExpanderCollectionInterface
+    {
+        $contextExpanderCollection->addApplication(new StorefrontResourcesContextExpanderPlugin(), [static::GLUE_STOREFRONT_API_APPLICATION_NAME]);
+        $contextExpanderCollection->addExpander(new RelationshipPluginsContextExpanderPlugin(), [
+            static::GLUE_BACKEND_API_APPLICATION_NAME,
+        ]);
+        $contextExpanderCollection->addApplication(new RelationshipPluginPlugin(), [
+            static::GLUE_BACKEND_API_APPLICATION_NAME,
+        ]);
+
+        return $contextExpanderCollection;
+    }
+
+    protected function getWithoutReturnTypePlugins(ContextExpanderCollectionInterface $contextExpanderCollection)
+    {
+        $contextExpanderCollection->addApplication(new StorefrontResourcesContextExpanderPlugin(), [static::GLUE_STOREFRONT_API_APPLICATION_NAME]);
+        $contextExpanderCollection->addApplication(new RelationshipPluginsContextExpanderPlugin(), [
+            static::GLUE_BACKEND_API_APPLICATION_NAME,
+        ]);
+
+        return $contextExpanderCollection;
     }
 
     /**
