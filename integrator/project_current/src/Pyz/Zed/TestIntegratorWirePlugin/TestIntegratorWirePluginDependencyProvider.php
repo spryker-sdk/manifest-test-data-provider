@@ -71,6 +71,7 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
     public function getTestPlugins(): array
     {
         return [
+            'OLD_VERSION' => new TestIntegratorWirePluginStringIndex(),
             new TestIntegratorWirePlugin(),
             TestIntegratorWirePluginConfig::TEST_INTEGRATOR_WIRE_PLUGIN => new TestIntegratorWirePluginIndex(),
             static::TEST_INTEGRATOR_WIRE_PLUGIN_STATIC_INDEX => new TestIntegratorWirePluginStaticIndex(),

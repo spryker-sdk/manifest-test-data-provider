@@ -1,0 +1,9 @@
+{
+    "wire-plugin": [
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorWirePlugin\\TestIntegratorWirePluginDependencyProvider::getTestPlugins",
+            "source": "\\Spryker\\Zed\\TestIntegratorWirePlugin\\Communication\\Plugin\\TestIntegratorWirePluginStringIndex",
+            "index": "NEW_VERSION"
+        }
+    ]
+}
