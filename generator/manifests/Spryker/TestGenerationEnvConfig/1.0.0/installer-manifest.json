@@ -176,5 +176,31 @@
                 "value": "new_value"
             }
         ]
+    },
+    "Spryker.AppCatalogGui": {
+        "configure-env": [
+            {
+                "target": "\\Spryker\\Shared\\AppCatalogGui\\AppCatalogGuiConstants::TEST_CONSTANT_A",
+                "value": "new_value"
+            },
+            {
+                "target": "\\Spryker\\Shared\\AppCatalogGui\\AppCatalogGuiConstants::TEST_CONSTANT_B",
+                "value": "new_value"
+            },
+            {
+                "target": "\\Spryker\\Shared\\AppCatalogGui\\ErrorHandlerConstants::ERROR_LEVEL",
+                "value": {
+                    "value": "\\E_ALL & ~\\E_DEPRECATED & ~\\E_USER_DEPRECATED",
+                    "is_literal": true
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\AppCatalogGui\\ErrorHandlerConstants::ERROR_LEVEL_LOG_ONLY",
+                "value": {
+                    "value": "\\E_DEPRECATED | \\E_USER_DEPRECATED",
+                    "is_literal": true
+                }
+            }
+        ]
     }
 }

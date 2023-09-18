@@ -1,6 +1,7 @@
 <?php
 
 use Spryker\Shared\AppCatalogGui\AppCatalogGuiConstants;
+use Spryker\Shared\AppCatalogGui\ErrorHandlerConstants;
 use Spryker\Shared\Kernel\KernelConstants;
 use Spryker\Shared\OauthClient\OauthClientConstants;
 use Spryker\Client\OauthAuth0\OauthAuth0Config;
@@ -87,3 +88,6 @@ $config[OauthAuth0Config::TEST_CONSTANT_C] = 'const_value';
 
 $config[AppCatalogGuiConstants::TEST_CONSTANT_A] =
 $config[AppCatalogGuiConstants::TEST_CONSTANT_B] = 'new_value';
+
+$config[ErrorHandlerConstants::ERROR_LEVEL] = E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED;
+$config[ErrorHandlerConstants::ERROR_LEVEL_LOG_ONLY] = E_DEPRECATED | E_USER_DEPRECATED;
