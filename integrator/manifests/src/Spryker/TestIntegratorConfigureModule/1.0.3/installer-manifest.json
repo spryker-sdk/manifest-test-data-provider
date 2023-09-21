@@ -62,6 +62,10 @@
             "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::countOfProducts"
         },
         {
+            "value": 1.2,
+            "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::getPercent"
+        },
+        {
             "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::testNewMethod",
             "value": {
                 "value": "return array_merge(parent::isCartCartItemsViaAjaxLoadEnabled(), ['sales' => '/sales/customer/customer-orders', 'notes' => '/customer-note-gui/index/index'])",

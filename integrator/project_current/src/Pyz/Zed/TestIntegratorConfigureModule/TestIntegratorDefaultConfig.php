@@ -283,6 +283,14 @@ class TestIntegratorDefaultConfig extends BaseConfig
     }
 
     /**
+     * @return float
+     */
+    public function getPercent(): float
+    {
+        return 1.2;
+    }
+
+    /**
      * @return array
      */
     public function testNewMethod(): array
