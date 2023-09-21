@@ -58,6 +58,10 @@
             "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::isOldDeterminationForOrderItemProcessEnabled"
         },
         {
+            "value": 100,
+            "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::countOfProducts"
+        },
+        {
             "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::testNewMethod",
             "value": {
                 "value": "return array_merge(parent::isCartCartItemsViaAjaxLoadEnabled(), ['sales' => '/sales/customer/customer-orders', 'notes' => '/customer-note-gui/index/index'])",

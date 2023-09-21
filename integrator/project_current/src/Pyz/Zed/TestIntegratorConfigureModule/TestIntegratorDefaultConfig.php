@@ -275,6 +275,14 @@ class TestIntegratorDefaultConfig extends BaseConfig
     }
 
     /**
+     * @return int
+     */
+    public function countOfProducts(): int
+    {
+        return 100;
+    }
+
+    /**
      * @return array
      */
     public function testNewMethod(): array
