@@ -232,6 +232,10 @@
                 "value": 100
             },
             {
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::getPercent",
+                "value": 1.2
+            },
+            {
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::ARRAY_VALUE",
                 "value": [
                     10,

@@ -417,4 +417,12 @@ class CartPageConfig extends SprykerCartPageConfig
     {
         return 100;
     }
+
+    /**
+     * @return float
+     */
+    public function getPercent(): float
+    {
+        return 1.2;
+    }
 }
