@@ -19,26 +19,6 @@ use Spryker\Zed\TestIntegratorUnwirePlugin\Communication\Plugin\UrlStorageEventS
 
 class TestIntegratorUnwirePluginDependencyProvider extends ParentTestIntegratorUnwirePluginDependencyProvider
 {
-    public function getTestArrayMergePlugins(): array
-    {
-        return array_merge(parent::getTestArrayMergePlugins(), [
-        ]);
-    }
-
-    public function getTestOnePlugins(): array
-    {
-        return [
-        ];
-    }
-
-    public function getConditionPlugins(): array
-    {
-        $plugins = [
-        ];
-
-        return $plugins;
-    }
-
     public function getTestPlugins(): array
     {
         return [
@@ -76,12 +56,6 @@ class TestIntegratorUnwirePluginDependencyProvider extends ParentTestIntegratorU
             ->add(new AvailabilityStorageEventSubscriber());
 
         return $collection;
-    }
-
-    protected function getSchedulerAdapterPlugins(): array
-    {
-        return [
-        ];
     }
 
     protected function extendConditionPlugins(Container $container): Container
