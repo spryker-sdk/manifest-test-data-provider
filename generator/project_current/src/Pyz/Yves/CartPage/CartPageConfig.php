@@ -409,4 +409,12 @@ class CartPageConfig extends SprykerCartPageConfig
     {
         return (new Container())->getLocator()->locale()->client()->getAllowedLanguages();
     }
+
+    /**
+     * @return int
+     */
+    public function getProductCount(): int
+    {
+        return 100;
+    }
 }

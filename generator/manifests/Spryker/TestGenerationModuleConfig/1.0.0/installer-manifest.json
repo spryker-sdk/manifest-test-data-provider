@@ -239,6 +239,10 @@
                 }
             },
             {
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::getProductCount",
+                "value": 100
+            },
+            {
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::ARRAY_VALUE",
                 "value": [
                     10,
