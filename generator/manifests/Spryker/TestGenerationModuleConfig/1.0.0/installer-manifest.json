@@ -2,7 +2,6 @@
     "SprykerShop.CartPage": {
         "configure-module": [
             {
-                "previousValue": "",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod",
                 "value": {
                     "value": "return array_merge(parent::isCartCartItemsViaAjaxLoadEnabled(), [APPLICATION_VENDOR_DIR . '\/spryker\/spryker\/Bundles\/*\/src\/*\/Zed\/*\/Persistence\/Propel\/Schema\/'])",
@@ -10,7 +9,6 @@
                 }
             },
             {
-                "previousValue": "",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod2",
                 "value": {
                     "value": "return array_merge(parent::isCartCartItemsViaAjaxLoadEnabled(), parent::getSharedConfig())",
@@ -18,7 +16,6 @@
                 }
             },
             {
-                "previousValue": "",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod3",
                 "value": "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::MANIFEST_KEY"
             },
@@ -41,7 +38,6 @@
                 }
             },
             {
-                "previousValue": "",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod6",
                 "value": {
                     "value": "return $this->get(\\Pyz\\Yves\\CartPage\\ConsoleConstants::ENABLE_DEVELOPMENT_CONSOLE_COMMANDS, false)",
@@ -49,7 +45,6 @@
                 }
             },
             {
-                "previousValue": "",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod7",
                 "value": {
                     "value": "return parent::get(\\Pyz\\Yves\\CartPage\\ConsoleConstants::ENABLE_DEVELOPMENT_CONSOLE_COMMANDS, false)",
@@ -65,7 +60,6 @@
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod9"
             },
             {
-                "previousValue": "",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod10",
                 "value": {
                     "value": "return $this->getSharedConfig($test, [\\Pyz\\Yves\\CartPage\\CartPageConfig::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => [\\Pyz\\Yves\\CartPage\\CartPageConfig::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => 'test']])",
@@ -73,7 +67,6 @@
                 }
             },
             {
-                "previousValue": "",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod11",
                 "value": {
                     "value": "return static::getSharedConfig($test, [\\Pyz\\Yves\\CartPage\\CartPageConfig::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => [\\Pyz\\Yves\\CartPage\\CartPageConfig::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => 'test']])",
@@ -81,7 +74,6 @@
                 }
             },
             {
-                "previousValue": "",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod12",
                 "value": {
                     "value": "$paymentMethodStatemachineMapping = $this->getPaymentMethodStatemachineMapping(); if (!array_key_exists($quoteTransfer->getPayment()->getPaymentSelection(), $paymentMethodStatemachineMapping)) { parent::determineProcessForOrderItem($quoteTransfer, $itemTransfer) } return $paymentMethodStatemachineMapping[$quoteTransfer->getPayment()->getPaymentSelection()]",
@@ -218,12 +210,10 @@
                 }
             },
             {
-                "previousValue": "",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::returnStringConstant",
                 "value": "PHP_EOL"
             },
             {
-                "previousValue": "",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::returnConstant",
                 "value": {
                     "value": "return PHP_EOL",
@@ -231,12 +221,19 @@
                 }
             },
             {
-                "previousValue": "",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::getAllowedLanguages",
                 "value": {
                     "value": "return (new \\SprykerShop\\Zed\\Kernel\\Container())->getLocator()->locale()->client()->getAllowedLanguages()",
                     "is_literal": true
                 }
+            },
+            {
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::getProductCount",
+                "value": 100
+            },
+            {
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::getPercent",
+                "value": 1.2
             },
             {
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::ARRAY_VALUE",

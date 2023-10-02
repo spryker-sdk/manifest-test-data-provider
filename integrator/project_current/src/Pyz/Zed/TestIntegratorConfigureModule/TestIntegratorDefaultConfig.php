@@ -275,6 +275,22 @@ class TestIntegratorDefaultConfig extends BaseConfig
     }
 
     /**
+     * @return int
+     */
+    public function countOfProducts(): int
+    {
+        return 100;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPercent(): float
+    {
+        return 1.2;
+    }
+
+    /**
      * @return array
      */
     public function testNewMethod(): array

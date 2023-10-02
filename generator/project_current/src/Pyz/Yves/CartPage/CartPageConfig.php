@@ -409,4 +409,20 @@ class CartPageConfig extends SprykerCartPageConfig
     {
         return (new Container())->getLocator()->locale()->client()->getAllowedLanguages();
     }
+
+    /**
+     * @return int
+     */
+    public function getProductCount(): int
+    {
+        return 100;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPercent(): float
+    {
+        return 1.2;
+    }
 }
