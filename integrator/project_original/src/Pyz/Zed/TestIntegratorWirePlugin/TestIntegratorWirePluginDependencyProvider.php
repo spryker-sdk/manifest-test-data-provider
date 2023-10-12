@@ -18,6 +18,7 @@ use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\AvailabilityStorag
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\FirstPlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\Plugin1;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SecondPlugin;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SecondWebProfilerApplicationPlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SinglePlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestFooConditionPlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestIntegratorWirePlugin;
@@ -38,6 +39,10 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
     public function getConditionPlugins(): array
     {
         $plugins = [];
+
+        if (class_exists(SecondWebProfilerApplicationPlugin::class)) {
+            $plugins[] = new SecondWebProfilerApplicationPlugin();
+        }
 
         return $plugins;
     }

@@ -54,6 +54,11 @@
         },
         {
             "target": "\\Pyz\\Zed\\TestIntegratorWirePlugin\\TestIntegratorWirePluginDependencyProvider::getConditionPlugins",
+            "source": "\\Spryker\\Zed\\TestIntegratorWirePlugin\\Communication\\Plugin\\SecondWebProfilerApplicationPlugin",
+            "condition": "class_exists(\\Spryker\\Zed\\TestIntegratorWirePlugin\\Communication\\Plugin\\SecondWebProfilerApplicationPlugin::class)"
+        },
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorWirePlugin\\TestIntegratorWirePluginDependencyProvider::getConditionPlugins",
             "source": "\\Spryker\\Zed\\TestIntegratorWirePlugin\\Communication\\Plugin\\CustomerUnsubscribePlugin",
             "arguments": {
                 "constructor-arguments": [
