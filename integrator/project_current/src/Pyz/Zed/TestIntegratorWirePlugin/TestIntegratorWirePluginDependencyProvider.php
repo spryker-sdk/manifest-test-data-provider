@@ -30,6 +30,7 @@ use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\NewsletterConstant
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\Plugin1;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\Plugin2;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SecondPlugin;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SecondWebProfilerApplicationPlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestAppendArgumentArrayValue;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestBarConditionPlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\TestFooConditionPlugin;
@@ -61,6 +62,10 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
                 NewsletterConstants::DEFAULT_NEWSLETTER_TYPE,
             ]),
         ];
+
+        if (class_exists(SecondWebProfilerApplicationPlugin::class)) {
+            $plugins[] = new SecondWebProfilerApplicationPlugin();
+        }
         if (class_exists(WebProfilerApplicationPlugin::class)) {
             $plugins[] = new WebProfilerApplicationPlugin();
         }
