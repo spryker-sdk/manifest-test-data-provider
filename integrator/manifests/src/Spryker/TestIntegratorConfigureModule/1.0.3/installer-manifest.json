@@ -293,6 +293,20 @@
             "previousValue": "",
             "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::getStoreSynchronizationPoolName",
             "value": "\\Pyz\\Zed\\Synchronization\\SynchronizationConfig::DEFAULT_SYNCHRONIZATION_POOL_NAME"
+        },
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::testStaticChangeWithPyz",
+            "value": "static::TEST_INTERNAL_VALUE_CHANGE"
+        },
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::testChangeWithPyz",
+            "value": "\\Pyz\\Zed\\TestIntegratorDefault\\BaseConfig::TEST_EXTERNAL_CONFIG"
+        },
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorDefault\\TestIntegratorDefaultConfig::testPyzAssocArray",
+            "value": {
+                "static::TEST_INTERNAL_VALUE_CHANGE": "\\Pyz\\Zed\\TestIntegratorDefault\\BaseConfig::TEST_EXTERNAL_CONFIG"
+            }
         }
     ]
 }

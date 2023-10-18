@@ -16,6 +16,17 @@ class BaseConfig extends AbstractConfig
      */
     protected const BOOL_VALUE = true;
 
+
+    /**
+     * @var string
+     */
+    public const TEST_EXTERNAL_CONFIG = 'TEST_EXTERNAL_CONFIG';
+
+    /**
+     * @var string
+     */
+    public const PYZ_TEST_EXTERNAL_CONFIG = 'PYZ_TEST_EXTERNAL_CONFIG';
+
     /**
      * @return string[]
      */
