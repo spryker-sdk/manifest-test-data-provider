@@ -15,6 +15,8 @@ use Spryker\Glue\GlueStorefrontApiApplication\Plugin\DocumentationGeneratorApi\S
 use Spryker\Shared\Config\Config;
 use Spryker\Shared\Log\LogConstants;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\AvailabilityStorageEventSubscriber;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\ExistentPluginOne;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\ExistentPluginTwo;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\FirstPlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\Plugin1;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SecondPlugin;
@@ -31,6 +33,14 @@ use Spryker\Zed\TestIntegratorWirePlugin\TestIntegratorWirePluginConfig;
 
 class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWirePluginDependencyProvider
 {
+    public function testAlreadyAddedPlugins(): array
+    {
+        return [
+            new ExistentPluginOne(),
+            new ExistentPluginTwo(),
+        ];
+    }
+
     public function getSinglePlugin(): SinglePlugin
     {
         return new SinglePlugin();

@@ -407,6 +407,11 @@
                     }
                 ]
             }
+        },
+        {
+            "target": "\\Pyz\\Zed\\TestIntegratorWirePlugin\\TestIntegratorWirePluginDependencyProvider::testAlreadyAddedPlugins",
+            "source": "\\Spryker\\Zed\\TestIntegratorWirePlugin\\Communication\\Plugin\\ExistentPluginThree",
+            "condition": "class_exists(\\Spryker\\Zed\\TestIntegratorWirePlugin\\Communication\\Plugin\\ExistentPluginThree::class)"
         }
     ]
 }
