@@ -63,6 +63,16 @@ class TestIntegratorDefaultConfig extends BaseConfig
     public const BOOL_EXISTING_VALUE = 'false';
 
     /**
+     * @var string
+     */
+    public const TEST_INTERNAL_VALUE_CHANGE = 'internal_value';
+
+    /**
+     * @var string
+     */
+    public const PYZ_TEST_INTERNAL_VALUE_CHANGE = 'pyz_internal_value';
+
+    /**
      * @return string
      */
     public function testChange(): string
@@ -449,5 +459,31 @@ class TestIntegratorDefaultConfig extends BaseConfig
     public function getStoreSynchronizationPoolName(): ?string
     {
         return SynchronizationConfig::DEFAULT_SYNCHRONIZATION_POOL_NAME;
+    }
+
+    /**
+     * @return string
+     */
+    public function testStaticChangeWithPyz(): string
+    {
+        return static::PYZ_TEST_INTERNAL_VALUE_CHANGE;
+    }
+
+    /**
+     * @return string
+     */
+    public function testChangeWithPyz(): string
+    {
+        return BaseConfig::PYZ_TEST_EXTERNAL_CONFIG;
+    }
+
+    /**
+     * @return array
+     */
+    public function testPyzAssocArray(): array
+    {
+        return [
+            static::PYZ_TEST_INTERNAL_VALUE_CHANGE => BaseConfig::PYZ_TEST_EXTERNAL_CONFIG,
+        ];
     }
 }
