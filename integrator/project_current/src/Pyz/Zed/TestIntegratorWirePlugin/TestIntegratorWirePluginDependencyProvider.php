@@ -24,6 +24,9 @@ use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\AvailabilityStorag
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\BeforeAllPlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\BeforeAllPluginsSubscriber;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\CustomerUnsubscribePlugin;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\ExistentPluginOne;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\ExistentPluginThree;
+use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\ExistentPluginTwo;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\FirstPlugin;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\FooStorageEventSubscriber;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\NewsletterConstants;
@@ -50,6 +53,19 @@ use Spryker\Zed\TestIntegratorWirePlugin\TestIntegratorWirePluginConfig;
 
 class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWirePluginDependencyProvider
 {
+    public function testAlreadyAddedPlugins(): array
+    {
+        $plugins = [
+            new ExistentPluginOne(),
+            new ExistentPluginTwo(),
+        ];
+        if (class_exists(ExistentPluginThree::class)) {
+            $plugins[] = new ExistentPluginThree();
+        }
+
+        return $plugins;
+    }
+
     public function getSinglePlugin(): TestIntegratorSingleWirePlugin
     {
         return new TestIntegratorSingleWirePlugin();
