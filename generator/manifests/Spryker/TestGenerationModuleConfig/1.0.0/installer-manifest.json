@@ -236,6 +236,17 @@
                 "value": 1.2
             },
             {
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::shouldExecuteShippingAddressValidationStrategyPlugins",
+                "value": true
+            },
+            {
+                "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::getRequiredCustomerRequestDataForGuestCheckout",
+                "value": {
+                    "value": "return array_merge(parent::getRequiredCustomerRequestDataForGuestCheckout(), [\\Generated\\Shared\\Transfer\\RestCustomerTransfer::FIRST_NAME, \\Generated\\Shared\\Transfer\\RestCustomerTransfer::LAST_NAME])",
+                    "is_literal": true
+                }
+            },
+            {
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::ARRAY_VALUE",
                 "value": [
                     10,

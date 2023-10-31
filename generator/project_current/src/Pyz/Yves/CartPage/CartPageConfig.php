@@ -9,6 +9,7 @@ namespace Pyz\Yves\CartPage;
 
 use App\Manifest\Generator\ArrayConfigElementManifestStrategy;
 use Generated\Shared\Transfer\ProductConfigurationInstanceTransfer;
+use Generated\Shared\Transfer\RestCustomerTransfer;
 use SprykerShop\Yves\CartPage\CartPageConfig as SprykerCartPageConfig;
 use SprykerShop\Zed\Kernel\Container;
 
@@ -424,5 +425,24 @@ class CartPageConfig extends SprykerCartPageConfig
     public function getPercent(): float
     {
         return 1.2;
+    }
+
+    /**
+     * @return bool
+     */
+    public function shouldExecuteShippingAddressValidationStrategyPlugins(): bool
+    {
+        return true;
+    }
+
+    /**
+     * @return list<string>
+     */
+    public function getRequiredCustomerRequestDataForGuestCheckout(): array
+    {
+        return array_merge(parent::getRequiredCustomerRequestDataForGuestCheckout(), [
+            RestCustomerTransfer::FIRST_NAME,
+            RestCustomerTransfer::LAST_NAME,
+        ]);
     }
 }

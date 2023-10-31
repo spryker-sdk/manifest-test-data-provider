@@ -16,6 +16,8 @@ use Spryker\Shared\TestIntegrator\PublishAndSynchronizeHealthCheckSearchConfig;
 
 class RabbitMqConfig extends SprykerRabbitMqConfig
 {
+    public const CHANGE_EXISTING_VALUE = 'test';
+
     protected function getTestConfiguration(): array
     {
         return [
@@ -56,5 +58,13 @@ class RabbitMqConfig extends SprykerRabbitMqConfig
         return [
             PublishAndSynchronizeHealthCheckSearchConfig::SYNC_SEARCH_PUBLISH_AND_SYNCHRONIZE_HEALTH_CHECK,
         ];
+    }
+
+    /**
+     * @return list<string>
+     */
+    public function getChangeExistingValue(): array
+    {
+        return [static::CHANGE_EXISTING_VALUE];
     }
 }
