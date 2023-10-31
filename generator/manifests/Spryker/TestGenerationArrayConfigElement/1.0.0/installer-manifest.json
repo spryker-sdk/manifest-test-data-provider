@@ -21,5 +21,17 @@
                 }
             }
         ]
+    },
+    "Spryker.RabbitMq": {
+        "add-config-array-element": [
+            {
+                "target": "\\Spryker\\Client\\RabbitMq\\RabbitMqConfig::getConfigurationFieldsNotAllowedForEncoding",
+                "value": "\\Generated\\Shared\\Transfer\\ProductConfigurationInstanceTransfer::QUANTITY"
+            },
+            {
+                "target": "\\Spryker\\Client\\RabbitMq\\RabbitMqConfig::getChangeExistingValue",
+                "value": "\\static::CHANGE_EXISTING_VALUE"
+            }
+        ]
     }
 }
