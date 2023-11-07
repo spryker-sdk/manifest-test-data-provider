@@ -12,6 +12,7 @@ namespace Pyz\Zed\TestIntegratorDefault;
 use App\Manifest\Generator\ArrayConfigElementManifestStrategy;
 use App\Manifest\Generator\ArrayConfigElementManifestStrategy2;
 use App\Manifest\Generator\ArrayConfigElementManifestStrategyTest;
+use Generated\Shared\Transfer\ItemTransfer;
 use Pyz\Yves\CartPage\CartPageConfig;
 use Pyz\Zed\Synchronization\SynchronizationConfig;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SinglePlugin;
@@ -71,6 +72,15 @@ class TestIntegratorDefaultConfig extends BaseConfig
      * @var string
      */
     public const PYZ_TEST_INTERNAL_VALUE_CHANGE = 'pyz_internal_value';
+
+    /**
+     * @var array
+     */
+    protected const QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET = [
+        ItemTransfer::SERVICE_POINT,
+        ItemTransfer::SHIPMENT,
+        ItemTransfer::SHIPMENT_TYPE,
+    ];
 
     /**
      * @return string
