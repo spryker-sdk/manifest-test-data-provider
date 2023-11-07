@@ -10,6 +10,7 @@ declare(strict_types=1);
 namespace Pyz\Zed\TestIntegratorDefault;
 
 use App\Manifest\Generator\ArrayConfigElementManifestStrategy;
+use Generated\Shared\Transfer\ItemTransfer;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SinglePlugin;
 
 class TestIntegratorDefaultConfig extends BaseConfig
@@ -28,6 +29,15 @@ class TestIntegratorDefaultConfig extends BaseConfig
      * @var string
      */
     public const PYZ_TEST_INTERNAL_VALUE_CHANGE = 'pyz_internal_value';
+
+    /**
+     * @var array
+     */
+    protected const QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET = [
+        ItemTransfer::SERVICE_POINT,
+        ItemTransfer::SHIPMENT,
+        ItemTransfer::SHIPMENT_TYPE,
+    ];
 
     /**
      * @return string

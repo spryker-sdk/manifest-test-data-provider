@@ -8,6 +8,7 @@
 namespace Pyz\Yves\CartPage;
 
 use App\Manifest\Generator\ArrayConfigElementManifestStrategy;
+use Generated\Shared\Transfer\ItemTransfer;
 use Generated\Shared\Transfer\ProductConfigurationInstanceTransfer;
 use Generated\Shared\Transfer\RestCustomerTransfer;
 use SprykerShop\Yves\CartPage\CartPageConfig as SprykerCartPageConfig;
@@ -55,6 +56,15 @@ class CartPageConfig extends SprykerCartPageConfig
      * @var int|null
      */
     protected const NULL_VALUE = null;
+
+    /**
+     * @var list<string>
+     */
+    protected const QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET = [
+        ItemTransfer::SERVICE_POINT,
+        ItemTransfer::SHIPMENT,
+        ItemTransfer::SHIPMENT_TYPE,
+    ];
 
     /**
      * @project
