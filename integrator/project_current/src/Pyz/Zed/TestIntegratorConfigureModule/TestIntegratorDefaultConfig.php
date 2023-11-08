@@ -23,7 +23,7 @@ class TestIntegratorDefaultConfig extends BaseConfig
     /**
      * @var array
      */
-    protected const QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET = [
+    public const QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET = [
         ItemTransfer::SERVICE_POINT,
         ItemTransfer::SHIPMENT,
         ItemTransfer::SHIPMENT_TYPE,
