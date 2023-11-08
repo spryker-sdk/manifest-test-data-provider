@@ -20,6 +20,15 @@ use SprykerShop\Zed\Kernel\Container;
 
 class TestIntegratorDefaultConfig extends BaseConfig
 {
+    /**
+     * @var array
+     */
+    protected const QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET = [
+        ItemTransfer::SERVICE_POINT,
+        ItemTransfer::SHIPMENT,
+        ItemTransfer::SHIPMENT_TYPE,
+    ];
+
     public const OTHER_CONSTANT = PHP_EOL;
 
     /**
@@ -72,15 +81,6 @@ class TestIntegratorDefaultConfig extends BaseConfig
      * @var string
      */
     public const PYZ_TEST_INTERNAL_VALUE_CHANGE = 'pyz_internal_value';
-
-    /**
-     * @var array
-     */
-    protected const QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET = [
-        ItemTransfer::SERVICE_POINT,
-        ItemTransfer::SHIPMENT,
-        ItemTransfer::SHIPMENT_TYPE,
-    ];
 
     /**
      * @return string
