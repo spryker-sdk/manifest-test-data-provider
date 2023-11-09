@@ -12,6 +12,7 @@ namespace Pyz\Zed\TestIntegratorDefault;
 use App\Manifest\Generator\ArrayConfigElementManifestStrategy;
 use App\Manifest\Generator\ArrayConfigElementManifestStrategy2;
 use App\Manifest\Generator\ArrayConfigElementManifestStrategyTest;
+use Generated\Shared\Transfer\ItemTransfer;
 use Pyz\Yves\CartPage\CartPageConfig;
 use Pyz\Zed\Synchronization\SynchronizationConfig;
 use Spryker\Zed\TestIntegratorWirePlugin\Communication\Plugin\SinglePlugin;
@@ -19,6 +20,15 @@ use SprykerShop\Zed\Kernel\Container;
 
 class TestIntegratorDefaultConfig extends BaseConfig
 {
+    /**
+     * @var array
+     */
+    public const QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET = [
+        ItemTransfer::SERVICE_POINT,
+        ItemTransfer::SHIPMENT,
+        ItemTransfer::SHIPMENT_TYPE,
+    ];
+
     public const OTHER_CONSTANT = PHP_EOL;
 
     /**
