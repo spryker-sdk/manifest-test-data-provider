@@ -7,6 +7,7 @@ use Spryker\Shared\OauthClient\OauthClientConstants;
 use Spryker\Client\OauthAuth0\OauthAuth0Config;
 use Generated\Shared\Transfer\SubmitPaymentTaxInvoiceTransfer;
 use Spryker\Shared\SearchHttp\SearchHttpConstants;
+use Spryker\Shared\Product\ProductConstants;
 
 $config[KernelConstants::RESOLVABLE_CLASS_NAMES_CACHE_ENABLED_TRUE] = true;
 

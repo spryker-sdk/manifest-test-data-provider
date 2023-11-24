@@ -236,10 +236,10 @@
             }
         ]
     },
-    "ProductConstants::TENANT_IDENTIFIER.?": {
+    "Spryker.Product": {
         "configure-env": [
             {
-                "target": "\\ProductConstants::TENANT_IDENTIFIER",
+                "target": "\\Spryker\\Shared\\Product\\ProductConstants::TENANT_IDENTIFIER",
                 "value": {
                     "\\Generated\\Shared\\Transfer\\SubmitPaymentTaxInvoiceTransfer::class": "payment-tax-invoice-commands"
                 }
