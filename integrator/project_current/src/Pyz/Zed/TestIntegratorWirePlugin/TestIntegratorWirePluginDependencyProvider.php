@@ -290,21 +290,24 @@ class TestIntegratorWirePluginDependencyProvider extends TestParentIntegratorWir
     public function getWrappedFunctionWithIndexD(): array
     {
         return [
-            new Plugin1(), new FirstPlugin(),
+            new Plugin1(),
+            new FirstPlugin(),
         ];
     }
 
     protected function getWrappedFunctionsWithIndex(): array
     {
         return [
-            'indexDefault' => $this->getWrappedFunctionWithIndexA(), 'indexKey' => $this->getWrappedFunctionWithIndexB(),
+            'indexDefault' => $this->getWrappedFunctionWithIndexA(),
+            'indexKey' => $this->getWrappedFunctionWithIndexB(),
         ];
     }
 
     public function getWrappedFunctionWithIndexA(): array
     {
         return [
-            new Plugin1(), 'key' => new Plugin2(),
+            new Plugin1(),
+            'key' => new Plugin2(),
         ];
     }
 

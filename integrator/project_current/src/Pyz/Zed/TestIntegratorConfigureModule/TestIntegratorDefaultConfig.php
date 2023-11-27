@@ -104,7 +104,8 @@ class TestIntegratorDefaultConfig extends BaseConfig
     public function testChange2(): array
     {
         return [
-            static::TEST_VARIABLE, static::TEST_VALUE4_CHANGE,
+            static::TEST_VARIABLE,
+            static::TEST_VALUE4_CHANGE,
         ];
     }
 
@@ -114,7 +115,8 @@ class TestIntegratorDefaultConfig extends BaseConfig
     public function testChange3(): array
     {
         return [
-            static::TEST_VARIABLE => static::ANOTHER_TEST_VARIABLE, static::TEST_VALUE_CHANGE => static::TEST_VALUE5_CHANGE,
+            static::TEST_VARIABLE => static::ANOTHER_TEST_VARIABLE,
+            static::TEST_VALUE_CHANGE => static::TEST_VALUE5_CHANGE,
         ];
     }
 
@@ -126,9 +128,11 @@ class TestIntegratorDefaultConfig extends BaseConfig
         return [
             static::TEST_VARIABLE => [
                 static::ANOTHER_TEST_VARIABLE,
-            ], static::TEST_VALUE6 => [
+            ],
+            static::TEST_VALUE6 => [
                 ArrayConfigElementManifestStrategy::TEST_VALUE5,
-            ], static::TEST_VALUE7 => [
+            ],
+            static::TEST_VALUE7 => [
                 ArrayConfigElementManifestStrategy::MANIFEST_KEY1 => ArrayConfigElementManifestStrategy::TEST_VALUE,
                 ArrayConfigElementManifestStrategy::MANIFEST_KEY2 => ArrayConfigElementManifestStrategy2::TEST_VALUE,
             ],
@@ -172,7 +176,8 @@ class TestIntegratorDefaultConfig extends BaseConfig
         return array_merge(
             parent::isCartCartItemsViaAjaxLoadEnabled(),
             [
-                static::BOOL_VALUE, ArrayConfigElementManifestStrategy::TEST_CHANGE7,
+                static::BOOL_VALUE,
+                ArrayConfigElementManifestStrategy::TEST_CHANGE7,
             ],
         );
     }
@@ -187,7 +192,8 @@ class TestIntegratorDefaultConfig extends BaseConfig
             [
                 ArrayConfigElementManifestStrategy::BOOL_VALUE => [
                     ArrayConfigElementManifestStrategy::TEST_EXISTS_VALUE,
-                ], ArrayConfigElementManifestStrategy::NEW_VALUE => [
+                ],
+                ArrayConfigElementManifestStrategy::NEW_VALUE => [
                     ArrayConfigElementManifestStrategy::TEST_NEW_VALUE,
                 ],
             ],
@@ -200,7 +206,8 @@ class TestIntegratorDefaultConfig extends BaseConfig
     public function testChangeMethod9(): array
     {
         return [
-            static::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => false, static::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED_CHANGED => true,
+            static::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED => false,
+            static::IS_CART_CART_ITEMS_VIA_AJAX_LOAD_ENABLED_CHANGED => true,
         ];
     }
 
