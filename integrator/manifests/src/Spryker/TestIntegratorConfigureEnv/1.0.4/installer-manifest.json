@@ -203,6 +203,12 @@
             "value": {
                 "\\Generated\\Shared\\Transfer\\NewTranfer::class": "value"
             }
+        },
+        {
+            "target": "\\Spryker\\Shared\\Agent\\AgentConstants::AGENT_ALLOWED_SECURED_PATTERN_LIST",
+            "value": [
+                "|^(\/en|\/de)?\/cart(?!\/add)"
+            ]
         }
     ]
 }
