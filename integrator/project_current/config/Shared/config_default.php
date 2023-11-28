@@ -18,7 +18,10 @@ $config[\Pyz\Client\TestIntegratorAddConfigArrayElement\TestIntegratorAddConfigA
 
 $config[SearchHttpConstants::TENANT_IDENTIFIER]
     = $config[ProductConstants::TENANT_IDENTIFIER] = [
-    MerchantUpdatedTransfer::class => 'merchant-events', \Generated\Shared\Transfer\SubmitPaymentTaxInvoiceTransfer::class => 'payment-tax-invoice-commands', \Generated\Shared\Transfer\IntValue::class => 10, \Generated\Shared\Transfer\FloatValue::class => 10.1,
+    MerchantUpdatedTransfer::class => 'merchant-events',
+    \Generated\Shared\Transfer\SubmitPaymentTaxInvoiceTransfer::class => 'payment-tax-invoice-commands',
+    \Generated\Shared\Transfer\IntValue::class => 10,
+    \Generated\Shared\Transfer\FloatValue::class => 10.1,
 ];
 
 $config[\Spryker\Shared\TestIntegratorConfigureEnv\TestIntegratorConfigureEnvConstants::TEST_VALUE] = 'Value 1';
