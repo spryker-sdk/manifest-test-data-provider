@@ -5,6 +5,9 @@ use Spryker\Shared\AppCatalogGui\ErrorHandlerConstants;
 use Spryker\Shared\Kernel\KernelConstants;
 use Spryker\Shared\OauthClient\OauthClientConstants;
 use Spryker\Client\OauthAuth0\OauthAuth0Config;
+use Generated\Shared\Transfer\SubmitPaymentTaxInvoiceTransfer;
+use Spryker\Shared\SearchHttp\SearchHttpConstants;
+use Spryker\Shared\Product\ProductConstants;
 
 $config[KernelConstants::RESOLVABLE_CLASS_NAMES_CACHE_ENABLED_TRUE] = true;
 
@@ -91,3 +94,8 @@ $config[AppCatalogGuiConstants::TEST_CONSTANT_B] = 'new_value';
 
 $config[ErrorHandlerConstants::ERROR_LEVEL] = E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED;
 $config[ErrorHandlerConstants::ERROR_LEVEL_LOG_ONLY] = E_DEPRECATED | E_USER_DEPRECATED;
+
+$config[SearchHttpConstants::TENANT_IDENTIFIER]
+    = $config[ProductConstants::TENANT_IDENTIFIER] = [
+    SubmitPaymentTaxInvoiceTransfer::class => 'payment-tax-invoice-commands',
+];

@@ -173,6 +173,36 @@
                 "value": "$config",
                 "is_literal": true
             }
+        },
+        {
+            "target": "\\Spryker\\Shared\\SearchHttp\\SearchHttpConstants::TENANT_IDENTIFIER",
+            "value": {
+                "\\Generated\\Shared\\Transfer\\SubmitPaymentTaxInvoiceTransfer::class": "payment-tax-invoice-commands"
+            }
+        },
+        {
+            "target": "\\Spryker\\Shared\\Product\\ProductConstants::TENANT_IDENTIFIER",
+            "value": {
+                "\\Generated\\Shared\\Transfer\\SubmitPaymentTaxInvoiceTransfer::class": "duplication"
+            }
+        },
+        {
+            "target": "\\Spryker\\Shared\\Product\\ProductConstants::TENANT_IDENTIFIER",
+            "value": {
+                "\\Generated\\Shared\\Transfer\\IntValue::class": 10
+            }
+        },
+        {
+            "target": "\\Spryker\\Shared\\Product\\ProductConstants::TENANT_IDENTIFIER",
+            "value": {
+                "\\Generated\\Shared\\Transfer\\FloatValue::class": 10.10
+            }
+        },
+        {
+            "target": "\\Spryker\\Shared\\SearchHttp\\NewKey::TENANT_IDENTIFIER",
+            "value": {
+                "\\Generated\\Shared\\Transfer\\NewTranfer::class": "value"
+            }
         }
     ]
 }

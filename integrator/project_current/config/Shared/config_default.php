@@ -1,6 +1,9 @@
 <?php
 
+use Generated\Shared\Transfer\MerchantUpdatedTransfer;
 use Spryker\Shared\Kernel\KernelConstants;
+use Spryker\Shared\Product\ProductConstants;
+use Spryker\Shared\SearchHttp\SearchHttpConstants;
 
 $config[KernelConstants::PROJECT_NAMESPACES] = [
     'Pyz',
@@ -12,6 +15,11 @@ $config[KernelConstants::CORE_NAMESPACES] = [
     'SprykerSdk',
 ];
 $config[\Pyz\Client\TestIntegratorAddConfigArrayElement\TestIntegratorAddConfigArrayElementConfig::TEST_VALUE_CHANGING] = 'Original value';
+
+$config[SearchHttpConstants::TENANT_IDENTIFIER]
+    = $config[ProductConstants::TENANT_IDENTIFIER] = [
+    MerchantUpdatedTransfer::class => 'merchant-events', \Generated\Shared\Transfer\SubmitPaymentTaxInvoiceTransfer::class => 'payment-tax-invoice-commands', \Generated\Shared\Transfer\IntValue::class => 10, \Generated\Shared\Transfer\FloatValue::class => 10.1,
+];
 
 $config[\Spryker\Shared\TestIntegratorConfigureEnv\TestIntegratorConfigureEnvConstants::TEST_VALUE] = 'Value 1';
 
@@ -32,10 +40,10 @@ $config[\Spryker\Shared\Kernel\KernelConstants::FUNC_VALUE] = getenv('SOMEKEY');
 $config[\Spryker\Shared\Kernel\KernelConstants::FUNC_VALUE2] = (string)getenv('SOMEKEY2');
 
 $config[\Spryker\Shared\Queue\QueueConstants::QUEUE_ADAPTER_CONFIGURATION_DEFAULT] = [
-    '\Spryker\Shared\Queue\QueueConfig::CONFIG_QUEUE_ADAPTER' => '\Spryker\Client\RabbitMq\Model\RabbitMqAdapter::class',
-    '\Spryker\Shared\Queue\QueueConfig::CONFIG_MAX_WORKER_NUMBER' => 1,
-    '\Spryker\Shared\Queue\QueueConfig::CONFIG_FLOAT_VALUE' => 10,
-    '\Spryker\Shared\Queue\QueueConfig::CONFIG_BOOL_VALUE' => 1,
+    \Spryker\Shared\Queue\QueueConfig::CONFIG_QUEUE_ADAPTER => \Spryker\Client\RabbitMq\Model\RabbitMqAdapter::class,
+    \Spryker\Shared\Queue\QueueConfig::CONFIG_MAX_WORKER_NUMBER => 1,
+    \Spryker\Shared\Queue\QueueConfig::CONFIG_FLOAT_VALUE => 10,
+    \Spryker\Shared\Queue\QueueConfig::CONFIG_BOOL_VALUE => 1,
 ];
 
 $config[\Spryker\Shared\Kernel\KernelConstants::COMPLEX_ARRAY_STRUCTURE] = [
@@ -85,3 +93,7 @@ $config[\Spryker\Shared\Kernel\KernelConstants::LOGGER_CONFIG_GLUE] = \Spryker\S
 $config[\Spryker\Shared\Kernel\KernelConstants::OAUTH_PROVIDER_NAME] = \Spryker\Zed\OauthAuth0\OauthAuth0Config::PROVIDER_NAME;
 
 $config[\Pyz\Client\TestIntegratorAddConfigArrayElement\TestIntegratorAddConfigArrayElementConfig::TEST_VAR_VALUE] = $config;
+
+$config[\Spryker\Shared\SearchHttp\NewKey::TENANT_IDENTIFIER] = [
+    \Generated\Shared\Transfer\NewTranfer::class => 'value',
+];

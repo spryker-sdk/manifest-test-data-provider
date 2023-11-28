@@ -37,9 +37,24 @@
             {
                 "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::COMPLEX_ARRAY_STRUCTURE",
                 "value": [
-                    "SprykerShop",
-                    "APPLICATION_SOURCE_DIR . '\/vendor\/spryker\/payment\/config\/Zed\/Oms'",
-                    "getenv('SOMEKEY')",
+                    "SprykerShop"
+                ]
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::COMPLEX_ARRAY_STRUCTURE",
+                "value": [
+                    "APPLICATION_SOURCE_DIR . '\/vendor\/spryker\/payment\/config\/Zed\/Oms'"
+                ]
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::COMPLEX_ARRAY_STRUCTURE",
+                "value": [
+                    "getenv('SOMEKEY')"
+                ]
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::COMPLEX_ARRAY_STRUCTURE",
+                "value": [
                     "(bool)$config[\\Spryker\\Shared\\Kernel\\KernelConstants::PROJECT_NAMESPACE]"
                 ]
             },
@@ -86,7 +101,12 @@
                         "controller": "*",
                         "action": "*",
                         "type": "allow"
-                    },
+                    }
+                ]
+            },
+            {
+                "target": "\\Spryker\\Shared\\Kernel\\KernelConstants::ACL_DEFAULT_RULES",
+                "value": [
                     {
                         "bundle": "acl",
                         "controller": "index",
@@ -124,9 +144,24 @@
             {
                 "target": "\\Spryker\\Shared\\Queue\\QueueConstants::QUEUE_ADAPTER_CONFIGURATION_DEFAULT",
                 "value": {
-                    "\\Spryker\\Shared\\Queue\\QueueConfig::CONFIG_QUEUE_ADAPTER": "\\Spryker\\Client\\RabbitMq\\Model\\RabbitMqAdapter::class",
-                    "\\Spryker\\Shared\\Queue\\QueueConfig::CONFIG_MAX_WORKER_NUMBER": 1,
-                    "\\Spryker\\Shared\\Queue\\QueueConfig::CONFIG_FLOAT_VALUE": 10,
+                    "\\Spryker\\Shared\\Queue\\QueueConfig::CONFIG_QUEUE_ADAPTER": "\\Spryker\\Client\\RabbitMq\\Model\\RabbitMqAdapter::class"
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\Queue\\QueueConstants::QUEUE_ADAPTER_CONFIGURATION_DEFAULT",
+                "value": {
+                    "\\Spryker\\Shared\\Queue\\QueueConfig::CONFIG_MAX_WORKER_NUMBER": 1
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\Queue\\QueueConstants::QUEUE_ADAPTER_CONFIGURATION_DEFAULT",
+                "value": {
+                    "\\Spryker\\Shared\\Queue\\QueueConfig::CONFIG_FLOAT_VALUE": 10
+                }
+            },
+            {
+                "target": "\\Spryker\\Shared\\Queue\\QueueConstants::QUEUE_ADAPTER_CONFIGURATION_DEFAULT",
+                "value": {
                     "\\Spryker\\Shared\\Queue\\QueueConfig::CONFIG_BOOL_VALUE": true
                 }
             }
@@ -174,18 +209,6 @@
             {
                 "target": "\\Spryker\\Shared\\AppCatalogGui\\AppCatalogGuiConstants::TEST_CONSTANT_B",
                 "value": "new_value"
-            }
-        ]
-    },
-    "Spryker.AppCatalogGui": {
-        "configure-env": [
-            {
-                "target": "\\Spryker\\Shared\\AppCatalogGui\\AppCatalogGuiConstants::TEST_CONSTANT_A",
-                "value": "new_value"
-            },
-            {
-                "target": "\\Spryker\\Shared\\AppCatalogGui\\AppCatalogGuiConstants::TEST_CONSTANT_B",
-                "value": "new_value"
             },
             {
                 "target": "\\Spryker\\Shared\\AppCatalogGui\\ErrorHandlerConstants::ERROR_LEVEL",
@@ -199,6 +222,26 @@
                 "value": {
                     "value": "\\E_DEPRECATED | \\E_USER_DEPRECATED",
                     "is_literal": true
+                }
+            }
+        ]
+    },
+    "Spryker.SearchHttp": {
+        "configure-env": [
+            {
+                "target": "\\Spryker\\Shared\\SearchHttp\\SearchHttpConstants::TENANT_IDENTIFIER",
+                "value": {
+                    "\\Generated\\Shared\\Transfer\\SubmitPaymentTaxInvoiceTransfer::class": "payment-tax-invoice-commands"
+                }
+            }
+        ]
+    },
+    "Spryker.Product": {
+        "configure-env": [
+            {
+                "target": "\\Spryker\\Shared\\Product\\ProductConstants::TENANT_IDENTIFIER",
+                "value": {
+                    "\\Generated\\Shared\\Transfer\\SubmitPaymentTaxInvoiceTransfer::class": "payment-tax-invoice-commands"
                 }
             }
         ]
