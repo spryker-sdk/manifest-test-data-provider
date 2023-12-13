@@ -100,3 +100,7 @@ $config[\Pyz\Client\TestIntegratorAddConfigArrayElement\TestIntegratorAddConfigA
 $config[\Spryker\Shared\SearchHttp\NewKey::TENANT_IDENTIFIER] = [
     \Generated\Shared\Transfer\NewTranfer::class => 'value',
 ];
+
+$config[\Spryker\Shared\Agent\AgentConstants::AGENT_ALLOWED_SECURED_PATTERN_LIST] = [
+    '|^(/en|/de)?/cart(?!/add)',
+];
