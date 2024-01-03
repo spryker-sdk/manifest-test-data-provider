@@ -455,7 +455,7 @@ class TestIntegratorDefaultConfig extends BaseConfig
     }
 
     /**
-     * @return string[]
+     * @return array<string>
      */
     public function getAllowedLanguages(): array
     {
