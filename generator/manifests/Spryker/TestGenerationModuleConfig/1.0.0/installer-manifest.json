@@ -17,7 +17,10 @@
             },
             {
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testNewMethod3",
-                "value": "\\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::MANIFEST_KEY"
+                "value": {
+                    "value": "return \\App\\Manifest\\Generator\\ArrayConfigElementManifestStrategy::MANIFEST_KEY",
+                    "is_literal": true
+                }
             },
             {
                 "previousValue": [],
@@ -81,9 +84,12 @@
                 }
             },
             {
-                "previousValue": "static::TEST_VALUE",
+                "previousValue": "return static::TEST_VALUE",
                 "target": "\\SprykerShop\\Yves\\CartPage\\CartPageConfig::testChange",
-                "value": "static::TEST_VALUE_CHANGE"
+                "value": {
+                    "value": "return static::TEST_VALUE_CHANGE",
+                    "is_literal": true
+                }
             },
             {
                 "previousValue": [
